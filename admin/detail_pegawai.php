@@ -156,11 +156,14 @@ $jumlah_pegawai = $Kepegawaian->count_pegawai();
                                 <thead>
                                     <tr class="border-0">
                                         <th class="p-0 text-muted fw-bold text-center min-w-30px">No</th>
-                                        <th class="p-0 text-muted fw-bold text-center min-w-30px">Foto</th>
                                         <th class="p-0 text-muted fw-bold text-center min-w-200px">Nama Pegawai</th>
-                                        <th class="p-0 text-muted fw-bold text-center min-w-150px">NIK</th>
-                                        <th class="p-0 text-muted fw-bold text-center min-w-100px">Jenis Karyawan</th>
-                                        <th class="p-0 text-muted fw-bold text-center min-w-100px">Pendidikan</th>
+                                        <th class="p-0 text-muted fw-bold text-center min-w-200px">NIK</th>
+                                        <th class="p-0 text-muted fw-bold text-center min-w-150px">Join Date</th>
+                                        <th class="p-0 text-muted fw-bold text-center min-w-150px">Retirement Date</th>
+                                        <th class="p-0 text-muted fw-bold text-center min-w-30px">Status</th>
+                                        <th class="p-0 text-muted fw-bold text-center min-w-100px">Active/Passive</th>
+                                        <th class="p-0 text-muted fw-bold text-center min-w-100px">SK Tetap</th>
+                                        <th class="p-0 text-muted fw-bold text-center min-w-100px">PKWT</th>
                                         <th class="p-0 text-muted fw-bold text-center min-w-100px">Aksi</th>
                                     </tr>
                                 </thead>
@@ -175,33 +178,29 @@ $jumlah_pegawai = $Kepegawaian->count_pegawai();
                                         <td class="text-dark fw-bolder">
                                             <?= ++$i;?>
                                         </td>
-                                        <td class="text-center">
-                                            <div class="d-flex text-center justify-content-center">
-                                                <!--begin::Avatar-->
-                                                <?php if($pegawai['foto'] != NULL):?>
-                                                <div class="symbol symbol-45px">
-                                                    <img alt="Pic"
-                                                        src="../img/uploads/foto_pegawai/<?=$pegawai['foto'];?>" />
-                                                </div>
-                                                <?php else:?>
-                                                <div class="symbol symbol-45px">
-                                                    <img alt="Pic" src="../assets/images/images.png" />
-                                                </div>
-                                                <?php endif;?>
-                                                <!--end::Avatar-->
-                                            </div>
-                                        </td>
                                         <td class="text-dark text-center fw-bolder">
                                             <?= $pegawai['nama_karyawan'];?>
                                         </td>
                                         <td class="text-dark text-center fw-bolder">
-                                            <?= $pegawai['id_pegawai'];?>
+                                            <?= $pegawai['nik'];?>
                                         </td>
                                         <td class="text-dark text-center fw-bolder">
-                                            <?= $pegawai['jenis_karyawan'];?>
+                                            <?= $pegawai['jd'];?>
                                         </td>
                                         <td class="text-dark text-center fw-bolder">
-                                            <?= $pegawai['pendidikan_terting'];?>
+                                            <?= $pegawai['retirement_date'];?>
+                                        </td>
+                                        <td class="text-dark text-center fw-bolder">
+                                            <?= $pegawai['status'];?>
+                                        </td>
+                                        <td class="text-dark text-center fw-bolder">
+                                            <?= $pegawai['active_passive'];?>
+                                        </td>
+                                        <td class="text-dark text-center fw-bolder">
+                                            <?= $pegawai['sk_tetap'] != NULL ? substr($pegawai['sk_tetap'],0,20).'...':'-';?>
+                                        </td>
+                                        <td class="text-dark text-center fw-bolder">
+                                            <?= $pegawai['pkwt'] != NULL ? substr($pegawai['pkwt'],0,50).'...':'-';?>
                                         </td>
                                         <td class="text-center">
                                             <a href="index.php?page=kepegawaian-edit&idk=<?=base64_encode($pegawai['idd_karyawan']);?>"

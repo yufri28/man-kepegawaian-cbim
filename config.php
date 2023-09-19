@@ -1,11 +1,9 @@
 <?php
-// Konfigurasi database
-define('DB_HOST', 'localhost'); // Ganti dengan host database Anda
-define('DB_USERNAME', 'root'); // Ganti dengan username database Anda
-define('DB_PASSWORD', ''); // Ganti dengan password database Anda
-define('DB_NAME', 'detail_kepegawaian'); // Ganti dengan nama database Anda
 
-// Fungsi untuk menghubungkan ke database
+define('DB_HOST', 'localhost'); 
+define('DB_USERNAME', 'root'); 
+define('DB_PASSWORD', ''); 
+define('DB_NAME', 'detail_kepegawaian'); 
 
 class Connection
 {
@@ -26,10 +24,8 @@ $koneksi = $conn->connectDatabase();
 
 define('BASE_URL', 'http://localhost/kepegawaian/');
 
-// Mendapatkan URL saat ini
-$current_url = $_SERVER['REQUEST_URI'];
 
-// Membagi URL menjadi segmen berdasarkan tanda "/" sebagai delimiter
+$current_url = $_SERVER['REQUEST_URI'];
 $segments = explode('/', trim($current_url, '/'));
 
 
