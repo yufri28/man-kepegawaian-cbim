@@ -2,7 +2,7 @@
 $Kepegawaian = new Kepegawaian();
 $id_auth = $_SESSION['id_auth'];
 $id_data_karyawan = base64_decode($_GET['idk']);
-$data_pegawai = $Kepegawaian->get_join_pegawai_byId($id_data_karyawan);
+$data_pegawai = $Kepegawaian->join_pegawai_byId($id_data_karyawan);
 
 ?>
 

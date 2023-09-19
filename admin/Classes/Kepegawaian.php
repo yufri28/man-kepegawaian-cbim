@@ -2,13 +2,12 @@
 require_once './../config.php';
 
 
-class Kepegawaian {
-    private $connect;
+class Kepegawaian extends Connection 
+{
     public function __construct()
     {
         
-        $this->connect = new Connection();
-        $this->db = $this->connect->connectDatabase();
+        $this->db = $this->connectDatabase();
     }
 
     public function get_join_pegawai()
@@ -16,7 +15,7 @@ class Kepegawaian {
         $data = $this->db->query("SELECT * FROM karyawan k JOIN detail_pegawai dp ON k.nik=dp.id_pegawai");
         return $data;
     }
-    public function get_join_pegawai_byId($id_karyawan)
+    public function join_pegawai_byId($id_karyawan)
     {
         $data = $this->db->query("SELECT * FROM karyawan k JOIN detail_pegawai dp ON k.nik=dp.id_pegawai WHERE k.idd_karyawan='$id_karyawan'")->fetch_assoc();
         return $data;
