@@ -20,7 +20,9 @@ $urlSegments = explode('/', rtrim($url, '/'));
 /// Menentukan halaman yang akan ditampilkan berdasarkan URL
 if (empty($urlSegments[0])) {
     // Jika URL kosong, tampilkan halaman beranda
-    require_once 'home.php';
+    // require_once 'home.php';
+    header("Location: ./auth/login.php");
+    exit;
 } elseif ($urlSegments[0] === 'admin') {
     // Jika URL dimulai dengan "admin", arahkan ke halaman admin
     if (isset($urlSegments[1])) {
