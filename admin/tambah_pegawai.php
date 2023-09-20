@@ -77,14 +77,12 @@ $data_karyawan = $Kepegawaian->get_karyawan();
                                 </div>
                                 <div class="row d-flex">
                                     <div class="mb-3 col-lg-6">
-                                        <label for="sk_tetap" class="form-label">SK Tetap <small
-                                                class="text-danger">*</small></label>
-                                        <textarea required class="form-control form-control-sm" name="sk_tetap"
+                                        <label for="sk_tetap" class="form-label">SK Tetap</label>
+                                        <textarea class="form-control form-control-sm" name="sk_tetap"
                                             rows="10"></textarea>
                                     </div>
                                     <div class="mb-3 col-lg-6">
-                                        <label for="pkwt" class="form-label">PKWT <small
-                                                class="text-danger">*</small></label>
+                                        <label for="pkwt" class="form-label">PKWT</label>
                                         <textarea class="form-control form-control-sm" name="pkwt" rows="10"></textarea>
                                     </div>
                                 </div>
