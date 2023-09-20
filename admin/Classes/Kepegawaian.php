@@ -124,35 +124,83 @@ class Kepegawaian extends Connection
 
     public function count_permanent()
     {
-        $data = $this->db->query("SELECT COUNT(*) jumlah_permanent 
+        $data = $this->db->query("SELECT COUNT(*) AS jumlah_permanent 
                                 FROM karyawan k LEFT JOIN detail_pegawai dp ON 
                                 k.nik = dp.id_pegawai
-                                WHERE status='PERMANENT'")->fetch_assoc();
+                                WHERE dp.status='PERMANENT'")->fetch_assoc();
         return $data['jumlah_permanent'];
     }
     public function count_contract()
     {
-        $data = $this->db->query("SELECT COUNT(*) jumla_contract 
+        $data = $this->db->query("SELECT COUNT(*) AS jumla_contract 
                                 FROM karyawan k LEFT JOIN detail_pegawai dp ON 
                                 k.nik = dp.id_pegawai
-                                WHERE status='CONTRACT'")->fetch_assoc();
+                                WHERE dp.status='CONTRACT'")->fetch_assoc();
         return $data['jumla_contract'];
     }
     public function count_pkh()
     {
-        $data = $this->db->query("SELECT COUNT(*) jumlah_pkh 
+        $data = $this->db->query("SELECT COUNT(*) AS jumlah_pkh 
                                 FROM karyawan k LEFT JOIN detail_pegawai dp ON 
                                 k.nik = dp.id_pegawai
-                                WHERE status='PKH'")->fetch_assoc();
+                                WHERE dp.status='PKH'")->fetch_assoc();
         return $data['jumlah_pkh'];
     }
     public function count_konsultan()
     {
-        $data = $this->db->query("SELECT COUNT(*) jumlah_konsultan 
+        $data = $this->db->query("SELECT COUNT(*) AS jumlah_konsultan 
                                 FROM karyawan k LEFT JOIN detail_pegawai dp ON 
                                 k.nik = dp.id_pegawai
-                                WHERE status='KONSULTAN'")->fetch_assoc();
+                                WHERE dp.status='KONSULTAN'")->fetch_assoc();
         return $data['jumlah_konsultan'];
+    }
+    public function count_active()
+    {
+        $data = $this->db->query("SELECT COUNT(*) AS jumlah_active 
+                                FROM karyawan k LEFT JOIN detail_pegawai dp ON 
+                                k.nik = dp.id_pegawai
+                                WHERE dp.active_passive='ACTIVE'")->fetch_assoc();
+        return $data['jumlah_active'];
+    }
+    public function count_passive()
+    {
+        $data = $this->db->query("SELECT COUNT(*) AS jumlah_passive 
+                                FROM karyawan k LEFT JOIN detail_pegawai dp ON 
+                                k.nik = dp.id_pegawai
+                                WHERE dp.active_passive='PASSIVE'")->fetch_assoc();
+        return $data['jumlah_passive'];
+    }
+    public function count_sk_tetap()
+    {
+        $data = $this->db->query("SELECT COUNT(*) AS jumlah_sk_tetap 
+                                FROM karyawan k JOIN detail_pegawai dp ON 
+                                k.nik = dp.id_pegawai
+                                WHERE dp.sk_tetap IS NOT NULL AND dp.sk_tetap !=''")->fetch_assoc();
+        return $data['jumlah_sk_tetap'];
+    }
+    public function count_sk_null()
+    {
+        $data = $this->db->query("SELECT COUNT(*) AS jumlah_sk_null
+                                FROM karyawan k JOIN detail_pegawai dp ON 
+                                k.nik = dp.id_pegawai
+                                WHERE dp.sk_tetap IS NULL AND dp.sk_tetap=''")->fetch_assoc();
+        return $data['jumlah_sk_null'];
+    }
+    public function count_pkwt()
+    {
+        $data = $this->db->query("SELECT COUNT(*) AS jumlah_pkwt 
+                                FROM karyawan k JOIN detail_pegawai dp ON 
+                                k.nik = dp.id_pegawai
+                                WHERE dp.pkwt != '' AND dp.pkwt IS NOT NULL")->fetch_assoc();
+        return $data['jumlah_pkwt'];
+    }
+    public function count_pkwt_null()
+    {
+        $data = $this->db->query("SELECT COUNT(*) AS jumlah_pkwt_null
+                                FROM karyawan k JOIN detail_pegawai dp ON 
+                                k.nik = dp.id_pegawai
+                                WHERE dp.pkwt IS NULL AND dp.pkwt = ''")->fetch_assoc();
+        return $data['jumlah_pkwt_null'];
     }
 
 }

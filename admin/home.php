@@ -6,6 +6,12 @@ $jumlah_permanent = $Kepegawaian->count_permanent();
 $jumlah_contract = $Kepegawaian->count_contract();
 $jumlah_pkh = $Kepegawaian->count_pkh();
 $jumlah_konsultan = $Kepegawaian->count_konsultan();
+$jumlah_active = $Kepegawaian->count_active();
+$jumlah_passive = $Kepegawaian->count_passive();
+$jumlah_sk_tetap = $Kepegawaian->count_sk_tetap();
+$jumlah_sk_null = $Kepegawaian->count_sk_null();
+$jumlah_pkwt = $Kepegawaian->count_pkwt();
+$jumlah_pkwt_null = $Kepegawaian->count_pkwt_null();
 
 ?>
 
@@ -117,6 +123,97 @@ $jumlah_konsultan = $Kepegawaian->count_konsultan();
             <div class="row gy-5 g-xl-8">
                 <!--begin::Col-->
                 <div class="col-xl-4">
+                    <!--begin::Mixed Widget 4-->
+                    <div class="card card-xl-stretch">
+                        <!--begin::Beader-->
+                        <div class="card-header border-0 py-5">
+                            <h3 class="card-title align-items-start flex-column">
+                                <span class="card-label fw-bolder fs-3 mb-1">Jumlah Pegawai</span>
+                                <span class="text-muted fw-bold fs-7">Berdasarkan SK</span>
+                            </h3>
+
+                        </div>
+                        <!--end::Header-->
+                        <!--begin::Body-->
+                        <div class="card-body d-flex flex-column">
+                            <div class="flex-grow-1">
+                                <div class="d-flex">
+                                    <div class="col-xl-6 me-3">
+                                        <!--begin::Statistics Widget 5-->
+                                        <a href="#" class="card bg-primary hoverable card-xl-stretch mb-xl-8">
+                                            <!--begin::Body-->
+                                            <div class="card-body text-center">
+                                                <div class="fw-bold text-white">
+                                                    Punya SK Tetap
+                                                </div>
+                                                <div class="text-white fw-bolder fs-2 mb-2 mt-5">
+                                                    <?=$jumlah_sk_tetap;?>
+                                                </div>
+                                            </div>
+                                            <!--end::Body-->
+                                        </a>
+                                        <!--end::Statistics Widget 5-->
+                                    </div>
+                                    <div class="col-xl-6">
+                                        <!--begin::Statistics Widget 5-->
+                                        <a href="#" class="card bg-danger hoverable card-xl-stretch mb-xl-8">
+                                            <!--begin::Body-->
+                                            <div class="card-body text-center">
+                                                <div class="fw-bold text-white">
+                                                    Tidak Punya SK Tetap
+                                                </div>
+                                                <div class="text-white fw-bolder fs-2 mb-2 mt-5">
+                                                    <?=$jumlah_sk_null;?>
+                                                </div>
+                                            </div>
+                                            <!--end::Body-->
+                                        </a>
+                                        <!--end::Statistics Widget 5-->
+                                    </div>
+                                </div>
+                                <div class="d-flex mt-n5">
+                                    <div class="col-xl-6 me-3">
+                                        <!--begin::Statistics Widget 5-->
+                                        <a href="#" class="card bg-primary hoverable card-xl-stretch mb-xl-8">
+                                            <!--begin::Body-->
+                                            <div class="card-body text-center">
+                                                <div class="fw-bold text-white">
+                                                    Punya SK PKWT
+                                                </div>
+                                                <div class="text-white fw-bolder fs-2 mb-2 mt-5">
+                                                    <?=$jumlah_pkwt;?>
+                                                </div>
+                                            </div>
+                                            <!--end::Body-->
+                                        </a>
+                                        <!--end::Statistics Widget 5-->
+                                    </div>
+                                    <div class="col-xl-6">
+                                        <!--begin::Statistics Widget 5-->
+                                        <a href="#" class="card bg-danger hoverable card-xl-stretch mb-xl-8">
+                                            <!--begin::Body-->
+                                            <div class="card-body text-center">
+                                                <div class="fw-bold text-white">
+                                                    Tidak Punya SK PKWT
+                                                </div>
+                                                <div class="text-white fw-bolder fs-2 mb-2 mt-5">
+                                                    <?=$jumlah_pkwt_null;?>
+                                                </div>
+                                            </div>
+                                            <!--end::Body-->
+                                        </a>
+                                        <!--end::Statistics Widget 5-->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--end::Body-->
+                    </div>
+                    <!--end::Mixed Widget 4-->
+                </div>
+                <!--end::Col-->
+                <!--begin::Col-->
+                <div class="col-xl-4">
                     <!--begin::Mixed Widget 3-->
                     <div class="card card-xl-stretch mb-xl-8">
                         <!--begin::Beader-->
@@ -210,278 +307,52 @@ $jumlah_konsultan = $Kepegawaian->count_konsultan();
                 <!--end::Col-->
                 <!--begin::Col-->
                 <div class="col-xl-4">
-                    <!--begin::Mixed Widget 4-->
-                    <div class="card card-xl-stretch">
-                        <!--begin::Beader-->
-                        <div class="card-header border-0 py-5">
-                            <h3 class="card-title align-items-start flex-column">
-                                <span class="card-label fw-bolder fs-3 mb-1">Jumlah Pegawai</span>
-                                <span class="text-muted fw-bold fs-7">Berdasarkan SK</span>
-                            </h3>
-
-                        </div>
-                        <!--end::Header-->
-                        <!--begin::Body-->
-                        <div class="card-body d-flex flex-column">
-                            <div class="flex-grow-1">
-                                <div class="">
-                                    <div class="col-xl-12">
-                                        <!--begin::Statistics Widget 5-->
-                                        <a href="#" class="card bg-primary hoverable card-xl-stretch mb-xl-8">
-                                            <!--begin::Body-->
-                                            <div class="card-body text-center">
-                                                <div class="fw-bold text-white">
-                                                    Punya SK Tetap
-                                                </div>
-                                                <div class="text-white fw-bolder fs-2 mb-2 mt-5">
-                                                    21
-                                                </div>
-                                            </div>
-                                            <!--end::Body-->
-                                        </a>
-                                        <!--end::Statistics Widget 5-->
-                                    </div>
-                                    <div class="col-xl-12">
-                                        <!--begin::Statistics Widget 5-->
-                                        <a href="#" class="card bg-danger hoverable card-xl-stretch mb-xl-8">
-                                            <!--begin::Body-->
-                                            <div class="card-body text-center">
-                                                <div class="fw-bold text-white">
-                                                    Tidak Punya SK Tetap
-                                                </div>
-                                                <div class="text-white fw-bolder fs-2 mb-2 mt-5">
-                                                    21
-                                                </div>
-                                            </div>
-                                            <!--end::Body-->
-                                        </a>
-                                        <!--end::Statistics Widget 5-->
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!--end::Body-->
-                    </div>
-                    <!--end::Mixed Widget 4-->
-                </div>
-                <!--end::Col-->
-                <!--begin::Col-->
-                <div class="col-xl-4">
                     <!--begin::Mixed Widget 5-->
                     <div class="card card-xl-stretch mb-5 mb-xl-8">
                         <!--begin::Beader-->
                         <div class="card-header border-0 py-5">
                             <h3 class="card-title align-items-start flex-column">
-                                <span class="card-label fw-bolder fs-3 mb-1">Trends</span>
-                                <span class="text-muted fw-bold fs-7">Latest trends</span>
+                                <span class="card-label fw-bolder fs-3 mb-1">Jumlah Pegawai</span>
+                                <span class="text-muted fw-bold fs-7">Aktive & Passive</span>
                             </h3>
-                            <div class="card-toolbar">
-                                <!--begin::Menu-->
-                                <button type="button"
-                                    class="btn btn-sm btn-icon btn-color-primary btn-active-light-primary"
-                                    data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">
-                                    <!--begin::Svg Icon | path: icons/duotune/general/gen024.svg-->
-                                    <span class="svg-icon svg-icon-2">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px"
-                                            viewBox="0 0 24 24">
-                                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                                <rect x="5" y="5" width="5" height="5" rx="1" fill="#000000" />
-                                                <rect x="14" y="5" width="5" height="5" rx="1" fill="#000000"
-                                                    opacity="0.3" />
-                                                <rect x="5" y="14" width="5" height="5" rx="1" fill="#000000"
-                                                    opacity="0.3" />
-                                                <rect x="14" y="14" width="5" height="5" rx="1" fill="#000000"
-                                                    opacity="0.3" />
-                                            </g>
-                                        </svg>
-                                    </span>
-                                    <!--end::Svg Icon-->
-                                </button>
-                                <!--begin::Menu 3-->
-                                <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-800 menu-state-bg-light-primary fw-bold w-200px py-3"
-                                    data-kt-menu="true">
-                                    <!--begin::Heading-->
-                                    <div class="menu-item px-3">
-                                        <div class="menu-content text-muted pb-2 px-3 fs-7 text-uppercase">
-                                            Payments
-                                        </div>
-                                    </div>
-                                    <!--end::Heading-->
-                                    <!--begin::Menu item-->
-                                    <div class="menu-item px-3">
-                                        <a href="#" class="menu-link px-3">Create Invoice</a>
-                                    </div>
-                                    <!--end::Menu item-->
-                                    <!--begin::Menu item-->
-                                    <div class="menu-item px-3">
-                                        <a href="#" class="menu-link flex-stack px-3">Create Payment
-                                            <i class="fas fa-exclamation-circle ms-2 fs-7" data-bs-toggle="tooltip"
-                                                title="Specify a target name for future usage and reference"></i></a>
-                                    </div>
-                                    <!--end::Menu item-->
-                                    <!--begin::Menu item-->
-                                    <div class="menu-item px-3">
-                                        <a href="#" class="menu-link px-3">Generate Bill</a>
-                                    </div>
-                                    <!--end::Menu item-->
-                                    <!--begin::Menu item-->
-                                    <div class="menu-item px-3" data-kt-menu-trigger="hover"
-                                        data-kt-menu-placement="right-end">
-                                        <a href="#" class="menu-link px-3">
-                                            <span class="menu-title">Subscription</span>
-                                            <span class="menu-arrow"></span>
-                                        </a>
-                                        <!--begin::Menu sub-->
-                                        <div class="menu-sub menu-sub-dropdown w-175px py-4">
-                                            <!--begin::Menu item-->
-                                            <div class="menu-item px-3">
-                                                <a href="#" class="menu-link px-3">Plans</a>
-                                            </div>
-                                            <!--end::Menu item-->
-                                            <!--begin::Menu item-->
-                                            <div class="menu-item px-3">
-                                                <a href="#" class="menu-link px-3">Billing</a>
-                                            </div>
-                                            <!--end::Menu item-->
-                                            <!--begin::Menu item-->
-                                            <div class="menu-item px-3">
-                                                <a href="#" class="menu-link px-3">Statements</a>
-                                            </div>
-                                            <!--end::Menu item-->
-                                            <!--begin::Menu separator-->
-                                            <div class="separator my-2"></div>
-                                            <!--end::Menu separator-->
-                                            <!--begin::Menu item-->
-                                            <div class="menu-item px-3">
-                                                <div class="menu-content px-3">
-                                                    <!--begin::Switch-->
-                                                    <label
-                                                        class="form-check form-switch form-check-custom form-check-solid">
-                                                        <!--begin::Input-->
-                                                        <input class="form-check-input w-30px h-20px" type="checkbox"
-                                                            value="1" checked="checked" name="notifications" />
-                                                        <!--end::Input-->
-                                                        <!--end::Label-->
-                                                        <span class="form-check-label text-muted fs-6">Recuring</span>
-                                                        <!--end::Label-->
-                                                    </label>
-                                                    <!--end::Switch-->
-                                                </div>
-                                            </div>
-                                            <!--end::Menu item-->
-                                        </div>
-                                        <!--end::Menu sub-->
-                                    </div>
-                                    <!--end::Menu item-->
-                                    <!--begin::Menu item-->
-                                    <div class="menu-item px-3 my-1">
-                                        <a href="#" class="menu-link px-3">Settings</a>
-                                    </div>
-                                    <!--end::Menu item-->
-                                </div>
-                                <!--end::Menu 3-->
-                                <!--end::Menu-->
-                            </div>
                         </div>
                         <!--end::Header-->
                         <!--begin::Body-->
                         <div class="card-body d-flex flex-column">
-                            <!--begin::Chart-->
-                            <div class="mixed-widget-5-chart card-rounded-top" data-kt-chart-color="danger"
-                                style="height: 150px"></div>
-                            <!--end::Chart-->
                             <!--begin::Items-->
-                            <div class="mt-5">
-                                <!--begin::Item-->
-                                <div class="d-flex flex-stack mb-5">
-                                    <!--begin::Section-->
-                                    <div class="d-flex align-items-center me-2">
-                                        <!--begin::Symbol-->
-                                        <div class="symbol symbol-50px me-3">
-                                            <div class="symbol-label bg-light">
-                                                <img src="../assets/media/svg/brand-logos/plurk.svg" class="h-50"
-                                                    alt="" />
+                            <div class="">
+                                <div class="col-xl-12">
+                                    <!--begin::Statistics Widget 5-->
+                                    <a href="#" class="card bg-primary hoverable card-xl-stretch mb-xl-8">
+                                        <!--begin::Body-->
+                                        <div class="card-body text-center">
+                                            <div class="fw-bold text-white">
+                                                ACTIVE
+                                            </div>
+                                            <div class="text-white fw-bolder fs-2 mb-2 mt-5">
+                                                <?= $jumlah_active; ?>
                                             </div>
                                         </div>
-                                        <!--end::Symbol-->
-                                        <!--begin::Title-->
-                                        <div>
-                                            <a href="#" class="fs-6 text-gray-800 text-hover-primary fw-bolder">Top
-                                                Authors</a>
-                                            <div class="fs-7 text-muted fw-bold mt-1">
-                                                Ricky Hunt, Sandra Trepp
-                                            </div>
-                                        </div>
-                                        <!--end::Title-->
-                                    </div>
-                                    <!--end::Section-->
-                                    <!--begin::Label-->
-                                    <div class="badge badge-light fw-bold py-4 px-3">
-                                        +82$
-                                    </div>
-                                    <!--end::Label-->
+                                        <!--end::Body-->
+                                    </a>
+                                    <!--end::Statistics Widget 5-->
                                 </div>
-                                <!--end::Item-->
-                                <!--begin::Item-->
-                                <div class="d-flex flex-stack mb-5">
-                                    <!--begin::Section-->
-                                    <div class="d-flex align-items-center me-2">
-                                        <!--begin::Symbol-->
-                                        <div class="symbol symbol-50px me-3">
-                                            <div class="symbol-label bg-light">
-                                                <img src="../assets/media/svg/brand-logos/figma-1.svg" class="h-50"
-                                                    alt="" />
+                                <div class="col-xl-12">
+                                    <!--begin::Statistics Widget 5-->
+                                    <a href="#" class="card bg-danger hoverable card-xl-stretch mb-xl-8">
+                                        <!--begin::Body-->
+                                        <div class="card-body text-center">
+                                            <div class="fw-bold text-white">
+                                                PASSIVE
+                                            </div>
+                                            <div class="text-white fw-bolder fs-2 mb-2 mt-5">
+                                                <?= $jumlah_passive; ?>
                                             </div>
                                         </div>
-                                        <!--end::Symbol-->
-                                        <!--begin::Title-->
-                                        <div>
-                                            <a href="#" class="fs-6 text-gray-800 text-hover-primary fw-bolder">Top
-                                                Sales</a>
-                                            <div class="fs-7 text-muted fw-bold mt-1">
-                                                PitStop Emails
-                                            </div>
-                                        </div>
-                                        <!--end::Title-->
-                                    </div>
-                                    <!--end::Section-->
-                                    <!--begin::Label-->
-                                    <div class="badge badge-light fw-bold py-4 px-3">
-                                        +82$
-                                    </div>
-                                    <!--end::Label-->
+                                        <!--end::Body-->
+                                    </a>
+                                    <!--end::Statistics Widget 5-->
                                 </div>
-                                <!--end::Item-->
-                                <!--begin::Item-->
-                                <div class="d-flex flex-stack">
-                                    <!--begin::Section-->
-                                    <div class="d-flex align-items-center me-2">
-                                        <!--begin::Symbol-->
-                                        <div class="symbol symbol-50px me-3">
-                                            <div class="symbol-label bg-light">
-                                                <img src="../assets/media/svg/brand-logos/vimeo.svg" class="h-50"
-                                                    alt="" />
-                                            </div>
-                                        </div>
-                                        <!--end::Symbol-->
-                                        <!--begin::Title-->
-                                        <div class="py-1">
-                                            <a href="#" class="fs-6 text-gray-800 text-hover-primary fw-bolder">Top
-                                                Engagement</a>
-                                            <div class="fs-7 text-muted fw-bold mt-1">
-                                                KT.com
-                                            </div>
-                                        </div>
-                                        <!--end::Title-->
-                                    </div>
-                                    <!--end::Section-->
-                                    <!--begin::Label-->
-                                    <div class="badge badge-light fw-bold py-4 px-3">
-                                        +82$
-                                    </div>
-                                    <!--end::Label-->
-                                </div>
-                                <!--end::Item-->
                             </div>
                             <!--end::Items-->
                         </div>
