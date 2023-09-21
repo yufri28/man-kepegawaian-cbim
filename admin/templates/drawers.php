@@ -460,7 +460,7 @@
                                         <!--end::Image-->
                                         <!--begin::Link-->
                                         <div class="overlay-layer bg-dark bg-opacity-10 rounded">
-                                            <a href="#" class="btn btn-sm btn-primary btn-shadow">Explore</a>
+                                            <a href="#" class="btn btn-sm btn-primary btn-shadow">Explores</a>
                                         </div>
                                         <!--end::Link-->
                                     </div>

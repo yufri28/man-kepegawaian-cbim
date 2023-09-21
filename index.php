@@ -16,7 +16,6 @@ $url = isset($_GET['url']) ? $_GET['url'] : '';
 
 // Mengonversi URL menjadi array dengan memisahkan setiap segment
 $urlSegments = explode('/', rtrim($url, '/'));
-
 /// Menentukan halaman yang akan ditampilkan berdasarkan URL
 if (empty($urlSegments[0])) {
     // Jika URL kosong, tampilkan halaman beranda

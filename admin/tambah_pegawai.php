@@ -112,7 +112,10 @@ $data_karyawan = $Kepegawaian->get_karyawan();
 <!--end::Root-->
 <!--begin::Drawers-->
 <!--begin::Activities drawer-->
-<?php require './templates/drawers.php';?>
+<?php 
+// require './templates/drawers.php';
+
+?>
 <!--end::Chat drawer-->
 <!--end::Drawers-->
 <!--begin::Modals-->

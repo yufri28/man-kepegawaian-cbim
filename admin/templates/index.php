@@ -8,7 +8,9 @@
 <!--end::Root-->
 <!--begin::Drawers-->
 <!--begin::Activities drawer-->
-<?php require './drawers.php';?>
+<?php 
+// require './drawers.php';
+?>
 <!--end::Chat drawer-->
 <!--end::Drawers-->
 <!--begin::Modals-->
