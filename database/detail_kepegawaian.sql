@@ -24,6 +24,26 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Struktur dari tabel `auth`
+--
+
+CREATE TABLE `auth` (
+  `id_auth` int(11) NOT NULL,
+  `username` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `level` int(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `auth`
+--
+
+INSERT INTO `auth` (`id_auth`, `username`, `password`, `level`) VALUES
+(1, 'admin', '$2y$10$mqqmP6KJ0MHup/QcKF/MIexmJABBxBiS6E4Dn0V3GIoORZE8uT0zm', 0);
+
+-- --------------------------------------------------------
+
+--
 -- Struktur dari tabel `detail_pegawai`
 --
 
@@ -253,9 +273,48 @@ INSERT INTO `detail_pegawai` (`id`, `retirement_date`, `jd`, `id_pegawai`, `stat
 (209, '2055-06-28', '2023-09-01', '10230004', 'CONTRACT', 'ACTIVE', '', ''),
 (212, '2037-01-05', '2014-05-05', '21140001', 'PERMANENT', 'ACTIVE', '35/Yasn/CBIM/Sk/TK.CB/7/2014, TANGGAL 22 JULI 2014', '');
 
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `karyawan`
+--
+
+CREATE TABLE `karyawan` (
+  `idd_karyawan` int(100) NOT NULL,
+  `foto` varchar(250) DEFAULT 'defaut.png',
+  `nama_karyawan` varchar(250) NOT NULL,
+  `nik` varchar(20) DEFAULT NULL,
+  `agama` enum('Kristen Protestan','Katolik','Islam','Hindu','Budha','Kong Hu Cu') DEFAULT NULL,
+  `alamat_ktp` varchar(250) DEFAULT NULL,
+  `alamat_sekarang` varchar(250) DEFAULT NULL,
+  `tempat_lahir` varchar(200) DEFAULT NULL,
+  `tgl_lahir` date DEFAULT NULL,
+  `nik_ktp` varchar(250) DEFAULT NULL,
+  `email` varchar(200) DEFAULT NULL,
+  `sex` enum('Laki-Laki','Perempuan','Tidak Disebutkan') DEFAULT NULL,
+  `no_telp` varchar(200) DEFAULT NULL,
+  `id_user` int(100) DEFAULT NULL,
+  `status_hubungan` enum('Belum Menikah','Menikah','Janda','Duda') DEFAULT NULL,
+  `jenis_karyawan` enum('Pelamar','Karyawan Baru','Karyawan','Keluar') NOT NULL,
+  `pendidikan_terting` enum('SMP','SMA','S1','S2','S3') DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `karyawan`
+--
+
+INSERT INTO `karyawan` (`idd_karyawan`, `foto`, `nama_karyawan`, `nik`, `agama`, `alamat_ktp`, `alamat_sekarang`, `tempat_lahir`, `tgl_lahir`, `nik_ktp`, `email`, `sex`, `no_telp`, `id_user`, `status_hubungan`, `jenis_karyawan`, `pendidikan_terting`) VALUES
+(1039, '', 'YANTO METUSALAK SNAE,S.Pd', '10220001', 'Kristen Protestan', 'JL.MENTIMUN RT 016 RW 005 KEL.BAKUNASE DUA KEC.KOTA RAJA', 'JL.MENTIMUN RT 016 RW 005 KEL.BAKUNASE DUA KEC.KOTA RAJA', 'KUPANG', '1997-07-03', '5371040307990004', 'yantosnae@gmail.com', 'Laki-Laki', '', 0, 'Belum Menikah', 'Karyawan', 'S1');
+
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indeks untuk tabel `auth`
+--
+ALTER TABLE `auth`
+  ADD PRIMARY KEY (`id_auth`);
 
 --
 -- Indeks untuk tabel `detail_pegawai`
@@ -264,14 +323,32 @@ ALTER TABLE `detail_pegawai`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indeks untuk tabel `karyawan`
+--
+ALTER TABLE `karyawan`
+  ADD PRIMARY KEY (`idd_karyawan`);
+
+--
 -- AUTO_INCREMENT untuk tabel yang dibuang
 --
+
+--
+-- AUTO_INCREMENT untuk tabel `auth`
+--
+ALTER TABLE `auth`
+  MODIFY `id_auth` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT untuk tabel `detail_pegawai`
 --
 ALTER TABLE `detail_pegawai`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=224;
+
+--
+-- AUTO_INCREMENT untuk tabel `karyawan`
+--
+ALTER TABLE `karyawan`
+  MODIFY `idd_karyawan` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1110;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
