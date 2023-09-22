@@ -28,11 +28,13 @@ if (empty($urlSegments[0])) {
         $adminPage = 'admin/' . $urlSegments[1] . '.php';
         if (file_exists($adminPage)) {
             require_once $adminPage;
-        } else {
+        } 
+        else {
             header("Location: ../404.php");
             exit;
         }
-    } else {
+    } 
+    else {
         header("Location: ../404.php");
         exit;
     }

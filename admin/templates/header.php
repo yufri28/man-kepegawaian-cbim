@@ -40,6 +40,12 @@
     <link href="./assets/css/style.bundle.css" rel="stylesheet" type="text/css" />
     <!--end::Global Stylesheets Bundle-->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
+    <!-- begin:Datatables -->
+
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css" />
+    <!-- end:Datatables -->
 </head>
 <!--end::Head-->
 <!--begin::Body-->
@@ -927,7 +933,7 @@
                                                     <a href="../../demo6/dist/account/settings.html"
                                                         class="menu-link d-flex px-5">
                                                         <span class="symbol symbol-20px me-4">
-                                                            <img class="rounded-1" src="../assets/media/flags/japan.svg"
+                                                            <img class="rounded-1" src="./assets/media/flags/japan.svg"
                                                                 alt="" /> </span>Japanese</a>
                                                 </div>
                                                 <!--end::Menu item-->
@@ -936,8 +942,8 @@
                                                     <a href="../../demo6/dist/account/settings.html"
                                                         class="menu-link d-flex px-5">
                                                         <span class="symbol symbol-20px me-4">
-                                                            <img class="rounded-1"
-                                                                src="../assets/media/flags/france.svg" alt="" />
+                                                            <img class="rounded-1" src="./assets/media/flags/france.svg"
+                                                                alt="" />
                                                         </span>French</a>
                                                 </div>
                                                 <!--end::Menu item-->

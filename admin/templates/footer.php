@@ -50,6 +50,22 @@ var hostUrl = "./assets/";
   <script src="./assets/js/custom/modals/upgrade-plan.js"></script>
   <!--end::Page Custom Javascript-->
 
+  <!-- begin:Datables -->
+  <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+  <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
+  <!-- end:Datables -->
+
+
+  <!-- begin:DataTable -->
+  <script>
+let table = new DataTable('#myTable', {
+    "scrollX": true,
+    "scrollY": true,
+});
+  </script>
+  <!-- end:DataTable -->
+
+
 
   <script>
 $(document).ready(function() {

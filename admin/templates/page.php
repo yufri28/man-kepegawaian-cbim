@@ -605,7 +605,7 @@
                                     <!--begin::Symbol-->
                                     <div class="symbol symbol-50px me-3">
                                         <div class="symbol-label bg-light">
-                                            <img src="../assets/media/svg/brand-logos/plurk.svg" class="h-50" alt="" />
+                                            <img src="./assets/media/svg/brand-logos/plurk.svg" class="h-50" alt="" />
                                         </div>
                                     </div>
                                     <!--end::Symbol-->
@@ -634,8 +634,7 @@
                                     <!--begin::Symbol-->
                                     <div class="symbol symbol-50px me-3">
                                         <div class="symbol-label bg-light">
-                                            <img src="../assets/media/svg/brand-logos/figma-1.svg" class="h-50"
-                                                alt="" />
+                                            <img src="./assets/media/svg/brand-logos/figma-1.svg" class="h-50" alt="" />
                                         </div>
                                     </div>
                                     <!--end::Symbol-->
@@ -664,7 +663,7 @@
                                     <!--begin::Symbol-->
                                     <div class="symbol symbol-50px me-3">
                                         <div class="symbol-label bg-light">
-                                            <img src="../assets/media/svg/brand-logos/vimeo.svg" class="h-50" alt="" />
+                                            <img src="./assets/media/svg/brand-logos/vimeo.svg" class="h-50" alt="" />
                                         </div>
                                     </div>
                                     <!--end::Symbol-->
@@ -810,7 +809,7 @@
                         <div class="d-flex mb-7">
                             <!--begin::Symbol-->
                             <div class="symbol symbol-60px symbol-2by3 flex-shrink-0 me-4">
-                                <img src="../assets/media/stock/600x400/img-3.jpg" class="mw-100" alt="" />
+                                <img src="./assets/media/stock/600x400/img-3.jpg" class="mw-100" alt="" />
                             </div>
                             <!--end::Symbol-->
                             <!--begin::Section-->
@@ -838,7 +837,7 @@
                         <div class="d-flex mb-7">
                             <!--begin::Symbol-->
                             <div class="symbol symbol-60px symbol-2by3 flex-shrink-0 me-4">
-                                <img src="../assets/media/stock/600x400/img-4.jpg" class="mw-100" alt="" />
+                                <img src="./assets/media/stock/600x400/img-4.jpg" class="mw-100" alt="" />
                             </div>
                             <!--end::Symbol-->
                             <!--begin::Section-->
