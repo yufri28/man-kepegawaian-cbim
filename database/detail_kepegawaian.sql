@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 21 Sep 2023 pada 02.53
+-- Waktu pembuatan: 22 Sep 2023 pada 11.11
 -- Versi server: 10.4.24-MariaDB
 -- Versi PHP: 8.1.6
 
@@ -262,7 +262,7 @@ INSERT INTO `detail_pegawai` (`id`, `retirement_date`, `jd`, `id_pegawai`, `stat
 (198, '2028-09-06', '2007-07-31', '10070007', 'PERMANENT', 'ACTIVE', '279/SK/Yasn/CBIM/KA.00.3.K/10/2021 (tmt 22 oktober 2021)', ''),
 (199, '2052-08-03', '2021-11-22', '10210003', 'CONTRACT', 'ACTIVE', 'Replacement pak marcho', ''),
 (200, '2053-07-03', '2022-01-05', '10220001', 'CONTRACT', 'ACTIVE', 'Penambahan Staff Hardware berdasarkan arahan CEO', ''),
-(201, '2029-07-20', '2007-07-31', '10070009', 'PERMANENT', 'ACTIVE', '173/SK/Yasn/CBIM/KA.00.3.K/04/2022 (tmt 11 april 2022)', ''),
+(201, '2053-07-03', '2022-01-05', '10070009', 'CONTRACT', 'ACTIVE', 'Penambahan Staff Hardware berdasarkan arahan CEO', ''),
 (202, '2038-09-26', '2022-04-20', '10220004', 'CONTRACT', 'ACTIVE', 'REQUEST BY IBU ANI (WA 030422)', ''),
 (203, '2020-05-18', '2022-05-25', '10220005', 'CONTRACT', 'ACTIVE', 'arahan pembina via direks (utk penempatan slnjtnya d I harper)', ''),
 (204, '2037-11-04', '2014-07-14', '04140107', 'PERMANENT', 'ACTIVE', '', '291/SK/Yasn/CBIM/HK.00.3.K/08/2022 (SK Mutasi UCB ke YCBIM) tmt 17082022'),
@@ -304,7 +304,21 @@ CREATE TABLE `karyawan` (
 --
 
 INSERT INTO `karyawan` (`idd_karyawan`, `foto`, `nama_karyawan`, `nik`, `agama`, `alamat_ktp`, `alamat_sekarang`, `tempat_lahir`, `tgl_lahir`, `nik_ktp`, `email`, `sex`, `no_telp`, `id_user`, `status_hubungan`, `jenis_karyawan`, `pendidikan_terting`) VALUES
-(1039, '', 'YANTO METUSALAK SNAE,S.Pd', '10220001', 'Kristen Protestan', 'JL.MENTIMUN RT 016 RW 005 KEL.BAKUNASE DUA KEC.KOTA RAJA', 'JL.MENTIMUN RT 016 RW 005 KEL.BAKUNASE DUA KEC.KOTA RAJA', 'KUPANG', '1997-07-03', '5371040307990004', 'yantosnae@gmail.com', 'Laki-Laki', '', 0, 'Belum Menikah', 'Karyawan', 'S1');
+(1039, '', 'YANTO METUSALAK SNAE,S.Pd', '10220001', 'Kristen Protestan', 'JL.MENTIMUN RT 016 RW 005 KEL.BAKUNASE DUA KEC.KOTA RAJA', 'JL.MENTIMUN RT 016 RW 005 KEL.BAKUNASE DUA KEC.KOTA RAJA', 'KUPANG', '1997-07-03', '5371040307990004', 'yantosnae@gmail.com', 'Laki-Laki', '', 0, 'Belum Menikah', 'Karyawan', 'S1'),
+(1110, 'defaut.png', 'res', '00000000', 'Islam', 'rwerwe', 'rwerwe', 'rwerwerwe', '2023-09-26', '5435353454353', 'dadsa@gmail.com', 'Laki-Laki', '3453534543', 0, 'Belum Menikah', 'Karyawan Baru', 'S1');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `notifikasi`
+--
+
+CREATE TABLE `notifikasi` (
+  `id_notif` int(11) NOT NULL,
+  `isi_notifikasi` text NOT NULL,
+  `status` enum('0','1') NOT NULL,
+  `create_at` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Indexes for dumped tables
@@ -329,6 +343,12 @@ ALTER TABLE `karyawan`
   ADD PRIMARY KEY (`idd_karyawan`);
 
 --
+-- Indeks untuk tabel `notifikasi`
+--
+ALTER TABLE `notifikasi`
+  ADD PRIMARY KEY (`id_notif`);
+
+--
 -- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
@@ -348,7 +368,13 @@ ALTER TABLE `detail_pegawai`
 -- AUTO_INCREMENT untuk tabel `karyawan`
 --
 ALTER TABLE `karyawan`
-  MODIFY `idd_karyawan` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1110;
+  MODIFY `idd_karyawan` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1111;
+
+--
+-- AUTO_INCREMENT untuk tabel `notifikasi`
+--
+ALTER TABLE `notifikasi`
+  MODIFY `id_notif` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
