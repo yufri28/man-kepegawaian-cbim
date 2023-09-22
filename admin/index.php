@@ -1,6 +1,6 @@
 <?php require_once '../config.php';?>
-<?php include './templates/header.php';?>
 <?php include_once './Classes/Kepegawaian.php';?>
+<?php include './templates/header.php';?>
 
 <!-- begin::Notification -->
 <?php if (isset($_SESSION['success'])): ?>

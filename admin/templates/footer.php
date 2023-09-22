@@ -67,26 +67,31 @@ let table = new DataTable('#myTable', {
 });
   </script>
   <!-- end:DataTable -->
+
+  <!-- begin::select2 -->
   <script>
-// In your Javascript (external .js resource or <script> tag)
 $(document).ready(function() {
     $('.js-example-basic-single').select2();
 });
   </script>
+  <!-- end::select2 -->
 
 
   <script>
 $(document).ready(function() {
     setInterval(() => {
         $.ajax({
-            url: "<?= base_url('home/count_notifications'); ?>",
+            url: "./proses.php",
             type: "POST",
             datatype: "json",
-            data: {},
+            data: {
+                notif: true
+            },
             success: function(response) {
-                var dataObj = JSON.parse(response);
-                var jumlahNotifikasi = dataObj.jumlah_notifikasi;
-                var dataNotif = dataObj.dataNotif;
+                var jumlahNotifikasi = response.jumlah_notifikasi;
+                var dataNotif = response.dataNotif;
+
+                // console.log(dataNotif.length);
 
                 if (dataNotif.length > 0) {
                     $('#jumlah_notif').html(jumlahNotifikasi);
@@ -124,7 +129,6 @@ $(document).ready(function() {
                         container.append(itemHTML);
                     });
                 }
-
             },
         });
     }, 2000);

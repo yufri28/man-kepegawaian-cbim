@@ -88,8 +88,10 @@ class Kepegawaian extends Connection
         $update = $this->db->query($query_update);
         if($update)
         {
+            $this->insert_notifikasi("Admin berhasil mengupdate data");
             $_SESSION['success'] = 'Data berhasil diupdate!';
         }else{
+            $this->insert_notifikasi("Admin gagal mengupdate data");
             $_SESSION['error'] = 'Data gagal diupdate!';
         }
         
@@ -202,6 +204,27 @@ class Kepegawaian extends Connection
                                 WHERE dp.pkwt IS NULL AND dp.pkwt = ''")->fetch_assoc();
         return $data['jumlah_pkwt_null'];
     }
+
+    public function count_notifikasi()
+    {
+        $data = $this->db->query("SELECT COUNT(*) AS jumlah_notif FROM notifikasi")->fetch_assoc();
+        return $data['jumlah_notif'];
+    }
+    public function get_notifikasi()
+    {
+        $data = array(); // Inisialisasi array kosong
+        $result = $this->db->query("SELECT * FROM notifikasi");
+        while ($row = $result->fetch_assoc()) {
+            $data[] = $row; // Menambahkan setiap baris data sebagai elemen baru dalam array
+        }
+        return $data;
+    }
+
+    public function insert_notifikasi($isi_notif){
+        $date = date('Y-m-d H:i:s');
+        $this->db->query("INSERT INTO notifikasi (isi_notifikasi, status, create_at) VALUES ('$isi_notif', '0', '$date')");
+    }
+    
 
 }
 

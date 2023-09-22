@@ -3,7 +3,7 @@
    if(!isset($_SESSION['login']) && $_SESSION['login'] != true) {
         header("Location: ./../auth/login.php");
     }
-    $jumlah_notif = 10;
+    $jumlah_notif = $Kepegawaian->count_notifikasi();
 ?>
 
 <!DOCTYPE html>
@@ -340,12 +340,10 @@
                                         <span id="jumlah_notif"
                                             class="badge fs-5 ms-n4 text-danger"><?=$jumlah_notif;?></span>
                                         <audio hidden controls id="audioplay">
-                                            <!-- <source
-                                                src="assets/media/sounds/mixkit-confirmation-tone-2867.wav"
+                                            <source src="./assets/media/sounds/mixkit-confirmation-tone-2867.wav"
                                                 type="audio/wav">
-                                            <source
-                                                src="assets/media/sounds/mixkit-confirmation-tone-2867.mp3"
-                                                type="audio/mp3"> -->
+                                            <source src="./assets/media/sounds/mixkit-confirmation-tone-2867.mp3"
+                                                type="audio/mp3">
                                             Browsermu tidak mendukung tag audio, upgrade donk!
                                         </audio>
                                     </div>
@@ -750,6 +748,7 @@
                                             <div class="tab-pane fade" id="kt_topbar_notifications_3" role="tabpanel">
                                                 <!--begin::Items-->
                                                 <div class="scroll-y mh-325px my-5 px-8">
+
                                                 </div>
                                                 <!--end::Items-->
                                                 <!--begin::View more-->

@@ -27,5 +27,7 @@ define('BASE_URL', 'http://localhost/eems/kepegawaian/admin/index.php');
 $current_url = $_SERVER['REQUEST_URI'];
 $segments = explode('/', trim($current_url, '/'));
 
+date_default_timezone_set("Asia/Taipei");
+
 
 ?>
