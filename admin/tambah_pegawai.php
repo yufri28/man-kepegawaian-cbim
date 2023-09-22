@@ -3,7 +3,6 @@
 $Kepegawaian = new Kepegawaian();
 $data_karyawan = $Kepegawaian->get_karyawan();
 ?>
-
 <!--begin::Root-->
 <div class="d-flex flex-column flex-root">
     <!--begin::Page-->
@@ -30,8 +29,8 @@ $data_karyawan = $Kepegawaian->get_karyawan();
                                 <div class="mb-3">
                                     <label for="nik" class="form-label">Karayawan <small
                                             class="text-danger">*</small></label>
-                                    <select class="form-control form-control-sm" name="nik" required
-                                        aria-label="Default select example">
+                                    <select class="form-control form-control-sm js-example-basic-single" name="nik"
+                                        required>
                                         <option value="">-- Pilih --</option>
                                         <?php foreach ($data_karyawan as $key => $karyawan):?>
                                         <option value="<?=$karyawan['nik'];?>">

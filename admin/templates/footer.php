@@ -54,6 +54,9 @@ var hostUrl = "./assets/";
   <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
   <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
   <!-- end:Datables -->
+  <!-- begin::Selectpiker -->
+  <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+  <!-- end::Selectpiker -->
 
 
   <!-- begin:DataTable -->
@@ -64,7 +67,12 @@ let table = new DataTable('#myTable', {
 });
   </script>
   <!-- end:DataTable -->
-
+  <script>
+// In your Javascript (external .js resource or <script> tag)
+$(document).ready(function() {
+    $('.js-example-basic-single').select2();
+});
+  </script>
 
 
   <script>

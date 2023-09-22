@@ -42,10 +42,25 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 
-    <!-- begin:Datatables -->
-
+    <!-- begin::Datatables -->
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css" />
-    <!-- end:Datatables -->
+    <!-- end::Datatables -->
+
+
+    <!-- begin::select2 -->
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <!-- end::select2 -->
+    <style>
+    .select2-container .select2-selection--single .select2-selection__rendered {
+        color: black !important;
+
+    }
+
+    .select2-dropdown {
+        color: black !important;
+
+    }
+    </style>
 </head>
 <!--end::Head-->
 <!--begin::Body-->
