@@ -22,7 +22,7 @@ class Connection
 $conn = new Connection();
 $koneksi = $conn->connectDatabase();
 
-define('BASE_URL', 'http://localhost/eems/kepegawaian/admin/index.php');
+define('BASE_URL', 'http://localhost/kepegawaian/');
 
 $current_url = $_SERVER['REQUEST_URI'];
 $segments = explode('/', trim($current_url, '/'));

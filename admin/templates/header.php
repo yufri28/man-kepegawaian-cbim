@@ -25,10 +25,10 @@
     <meta property="og:type" content="article" />
     <meta property="og:title"
         content="Metronic - Bootstrap 5 HTML, VueJS, React, Angular &amp; Laravel Admin Dashboard Theme" />
-    <meta property="og:url" content="https://keenthemes.com/metronic" />
-    <meta property="og:site_name" content="Keenthemes | Metronic" />
+    <!-- <meta property="og:url" content="https://keenthemes.com/metronic" />
+    <meta property="og:site_name" content="Keenthemes | Metronic" /> -->
     <link rel="canonical" href="https://preview.keenthemes.com/metronic8" />
-    <!-- <link rel="shortcut icon" href="./assets/media/logos/logo-cbim.png" /> -->
+    <link rel="shortcut icon" href="./assets/media/logos/logo-cbim.png" />
     <!--begin::Fonts-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
     <!--end::Fonts-->
@@ -78,8 +78,8 @@
             <!--begin::Brand-->
             <div class="aside-logo py-8" id="kt_aside_logo">
                 <!--begin::Logo-->
-                <a href="../../demo6/dist/index.html" class="d-flex align-items-center">
-                    <img alt="Logo" src="./assets/media/logos/favicon.ico" class="h-45px logo" />
+                <a href="http://localhost/kepegawaian/admin/index.php" class="d-flex align-items-center">
+                    <img alt="Logo" src="./assets/media/logos/logo-cbim.png" class="h-45px logo" />
                 </a>
                 <!--end::Logo-->
             </div>
@@ -255,8 +255,8 @@
                     <!--end::Aside mobile toggle-->
                     <!--begin::Mobile logo-->
                     <div class="d-flex align-items-center flex-grow-1 flex-lg-grow-0">
-                        <a href="../../demo6/dist/index.html" class="d-lg-none">
-                            <img alt="Logo" src="./assets/media/logos/logo-demo6.svg" class="h-30px" />
+                        <a href="http://localhost/kepegawaian/admin/index.php" class="d-lg-none">
+                            <img alt="Logo" src="./assets/media/logos/logo-cbim.png" class="h-30px" />
                         </a>
                     </div>
                     <!--end::Mobile logo-->
