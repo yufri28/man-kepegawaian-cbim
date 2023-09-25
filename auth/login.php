@@ -31,8 +31,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 
 ?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -87,7 +85,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             <div class="card-body py-5 px-md-5">
                                 <h1 class="mt-2 text-center mb-5">LOGIN</h1>
                                 <form method="post" action="">
-                                    <!-- Email input -->
+                                    <!-- Username input -->
                                     <div class="form-outline mb-4">
                                         <label class="form-label" for="username">Username</label>
                                         <input type="text" id="username" required name="username"
@@ -97,7 +95,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                     <!-- Password input -->
                                     <div class="form-outline mb-4">
                                         <label class="form-label" for="password">Password</label>
-                                        <input type="password" id="password" required name="password"
+                                        <input type="password" id="password" autocomplete="off" required name="password"
                                             class="form-control" />
                                     </div>
                                     <!-- Submit button -->
