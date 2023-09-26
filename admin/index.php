@@ -50,6 +50,12 @@ if (isset($_GET['page'])) {
         case 'kepegawaian-edit':
             include "./edit_pegawai.php";
             break; 
+        case 'kepegawaian-lihat':
+            include "./lihat_pegawai.php";
+            break; 
+        case '404':
+            include "./404.php";
+            break; 
         default:
             // Tampilkan halaman 404
             include "./404.php";
