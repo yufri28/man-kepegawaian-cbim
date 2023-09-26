@@ -4,7 +4,9 @@ $id_auth = $_SESSION['id_auth'];
 $id_data_karyawan = base64_decode($_GET['idk']);
 $data_pegawai = $Kepegawaian->join_pegawai_byId($id_data_karyawan);
 $data_karyawan = $Kepegawaian->get_all_karyawan();
-
+if(empty($data_pegawai)){
+    echo "<script>window.location.href='index.php?page=404'</script>";
+}
 ?>
 
 <!--begin::Root-->
