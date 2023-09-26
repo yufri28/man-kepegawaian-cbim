@@ -37,7 +37,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Login | CBIM</title>
+    <meta name="description" content="Sistem Manajemen Kepegawaian Yayasan Citra Bina Insan Mandiri Kupang" />
+    <meta name="keywords"
+        content="Yayasan CBIM, Yayasan Citra Bina Insan Mandiri Kupang, CBIM, UCB, Universitas Citra Bangsa, Manajemen Kepegawaian" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="YAYASAN CBIM - KUPANG, CBIM, UCB, MANAJEMEN KEPEGAWAIAN" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
