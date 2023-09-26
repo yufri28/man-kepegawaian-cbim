@@ -40,20 +40,6 @@ $jumlah_pegawai = $Kepegawaian->count_pegawai();
                                     <!--end::Svg Icon-->Data Pegawai
                                 </a>
                             </div>
-                            <!-- <a href="?page=kepegawaian-edit"
-                                class="btn btn-sm btn-icon btn-color-primary btn-active-light-primary"
-                                data-kt-menu-placement="bottom-end"> -->
-                            <!--begin::Svg Icon | path: icons/duotune/general/gen024.svg-->
-                            <!-- <span class="svg-icon svg-icon-2">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                        class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
-                                        <path
-                                            d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z" />
-                                    </svg>
-                                </span> -->
-                            <!--end::Svg Icon-->
-                            <!-- </a> -->
-
                         </div>
                     </div>
                     <!--end::Header-->
@@ -72,11 +58,11 @@ $jumlah_pegawai = $Kepegawaian->count_pegawai();
                                         <th class="p-0 text-muted fw-bold text-center min-w-200px">Nama Pegawai</th>
                                         <th class="p-0 text-muted fw-bold text-center min-w-200px">NIK</th>
                                         <th class="p-0 text-muted fw-bold text-center min-w-150px">Join Date</th>
-                                        <th class="p-0 text-muted fw-bold text-center min-w-150px">Retirement Date</th>
+                                        <!-- <th class="p-0 text-muted fw-bold text-center min-w-150px">Retirement Date</th> -->
                                         <th class="p-0 text-muted fw-bold text-center min-w-30px">Status</th>
                                         <th class="p-0 text-muted fw-bold text-center min-w-100px">Active/Passive</th>
-                                        <th class="p-0 text-muted fw-bold text-center min-w-100px">SK Tetap</th>
-                                        <th class="p-0 text-muted fw-bold text-center min-w-100px">PKWT</th>
+                                        <!-- <th class="p-0 text-muted fw-bold text-center min-w-100px">SK Tetap</th> -->
+                                        <!-- <th class="p-0 text-muted fw-bold text-center min-w-100px">PKWT</th> -->
                                         <th class="p-0 text-muted fw-bold text-center min-w-100px">Aksi</th>
                                     </tr>
                                 </thead>
@@ -100,24 +86,40 @@ $jumlah_pegawai = $Kepegawaian->count_pegawai();
                                         <td class="text-dark text-center fw-bolder">
                                             <?= $pegawai['jd'];?>
                                         </td>
-                                        <td class="text-dark text-center fw-bolder">
+                                        <!-- <td class="text-dark text-center fw-bolder">
                                             <?= $pegawai['retirement_date'];?>
-                                        </td>
+                                        </td> -->
                                         <td class="text-dark text-center fw-bolder">
                                             <?= $pegawai['status'];?>
                                         </td>
                                         <td class="text-dark text-center fw-bolder">
                                             <?= $pegawai['active_passive'];?>
                                         </td>
-                                        <td class="text-dark text-center fw-bolder">
+                                        <!-- <td class="text-dark text-center fw-bolder">
                                             <?= $pegawai['sk_tetap'] != NULL ? substr($pegawai['sk_tetap'],0,20).'...':'-';?>
                                         </td>
                                         <td class="text-dark text-center fw-bolder">
                                             <?= $pegawai['pkwt'] != NULL ? substr($pegawai['pkwt'],0,50).'...':'-';?>
-                                        </td>
-                                        <td class="text-center pe-3">
+                                        </td> -->
+                                        <td class="text-center text-nowrap pe-3">
+                                            <a href="index.php?page=kepegawaian-lihat&idk=<?=base64_encode($pegawai['idd_karyawan']);?>"
+                                                class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1"
+                                                title="Lihat Detail">
+                                                <!--begin::Svg Icon | path: icons/duotune/art/art005.svg-->
+                                                <span class="svg-icon svg-icon-3">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                        fill="black" class="bi bi-eye-fill" viewBox="0 0 16 16">
+                                                        <path opacity="0.3"
+                                                            d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z" />
+                                                        <path opacity="0.3"
+                                                            d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z" />
+                                                    </svg>
+                                                </span>
+                                                <!--end::Svg Icon-->
+                                            </a>
                                             <a href="index.php?page=kepegawaian-edit&idk=<?=base64_encode($pegawai['idd_karyawan']);?>"
-                                                class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
+                                                class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1"
+                                                title="Edit">
                                                 <!--begin::Svg Icon | path: icons/duotune/art/art005.svg-->
                                                 <span class="svg-icon svg-icon-3">
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
@@ -134,7 +136,8 @@ $jumlah_pegawai = $Kepegawaian->count_pegawai();
                                             </a>
                                             <button type="button" data-bs-toggle="modal"
                                                 data-bs-target="#hapusPegawai<?=$pegawai['idd_karyawan'];?>"
-                                                class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm">
+                                                class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm"
+                                                title="Hapus">
                                                 <!--begin::Svg Icon | path: icons/duotune/general/gen027.svg-->
                                                 <span class="svg-icon svg-icon-3">
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
