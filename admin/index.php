@@ -66,13 +66,6 @@ if (isset($_GET['page'])) {
 }
 
 ?>
-<!--begin::Drawers-->
-<!--begin::Activities drawer-->
-<?php 
-// require './templates/drawers.php';
-?>
-<!--end::Chat drawer-->
-<!--end::Drawers-->
 <!--begin::Modals-->
 <!--begin::Modal - Create App-->
 <?php require './templates/modals.php';?>

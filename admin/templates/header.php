@@ -23,8 +23,8 @@
     <meta property="og:locale" content="en_US" />
     <meta property="og:type" content="article" />
     <meta property="og:title" content="YAYASAN CBIM - KUPANG, CBIM, UCB, MANAJEMEN KEPEGAWAIAN" />
-    <!-- <meta property="og:url" content="https://keenthemes.com/metronic" />
-    <meta property="og:site_name" content="Keenthemes | Metronic" /> -->
+    <!-- <meta property="og:url" content="https://keenthemes.com/metronic" /> -->
+    <meta property="og:site_name" content="Kepegawaian | CBIKM" />
     <link rel="canonical" href="https://preview.keenthemes.com/metronic8" />
     <link rel="shortcut icon" href="./assets/media/logos/logo-cbim.png" />
     <!--begin::Fonts-->
@@ -275,7 +275,7 @@
                                     <div data-kt-menu-trigger="click" data-kt-menu-placement="bottom-start"
                                         class="menu-item here show menu-lg-down-accordion me-lg-1">
                                         <a class="menu-link active py-3" href="../../demo6/dist/index.html">
-                                            <span class="menu-title">Dashboards</span>
+                                            <span class="menu-title">Dashboard</span>
                                             <span class="menu-arrow d-lg-none"></span>
                                         </a>
                                         <div
@@ -1040,7 +1040,7 @@
                             class="page-title d-flex align-items-center flex-wrap me-3 mb-5 mb-lg-0">
                             <!--begin::Title-->
                             <h1 class="d-flex align-items-center text-dark fw-bolder my-1 fs-3">
-                                Dashboard
+                                <?= isset($_GET['page']) && str_contains($_GET['page'],'kepegawaian') == 'kepegawaian' ? 'Kepegawaian':'Dashboard';?>
                                 <!--begin::Separator-->
                                 <span class="h-20px border-gray-200 border-start ms-3 mx-2"></span>
                                 <!--end::Separator-->
