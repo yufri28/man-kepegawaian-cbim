@@ -15,6 +15,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
         $active_passive = htmlspecialchars($_POST['active_passive']);
         $sk_tetap = htmlspecialchars($_POST['sk_tetap']);
         $pkwt = htmlspecialchars($_POST['pkwt']);
+        $tahun = htmlspecialchars($_POST['tahun']);
         $dataPegawai = [
             'nik' => $nik,
             'retirement_date' => $retirement_date,
@@ -22,7 +23,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
             'status' => $status,
             'active_passive' => $active_passive,
             'sk_tetap' => $sk_tetap,
-            'pkwt' => $pkwt
+            'pkwt' => $pkwt,
+            'tahun' => $tahun
         ];
         $Kepegawaian->add($dataPegawai);
            
@@ -38,6 +40,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
         $active_passive = htmlspecialchars($_POST['active_passive']);
         $sk_tetap = htmlspecialchars($_POST['sk_tetap']);
         $pkwt = htmlspecialchars($_POST['pkwt']);
+        $tahun = htmlspecialchars($_POST['tahun']);
        
         $dataPegawai = [
             'id' => $id,
@@ -46,7 +49,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
             'status' => $status,
             'active_passive' => $active_passive,
             'sk_tetap' => $sk_tetap,
-            'pkwt' => $pkwt
+            'pkwt' => $pkwt,
+            'tahun' => $tahun
         ];
         $Kepegawaian->update($dataPegawai);
     }

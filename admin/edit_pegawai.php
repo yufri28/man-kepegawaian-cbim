@@ -100,6 +100,13 @@ if(empty($data_pegawai)){
                                             rows="10"><?=$data_pegawai['pkwt'];?></textarea>
                                     </div>
                                 </div>
+                                <div class="mb-3">
+                                    <label for="tahun" class="form-label">Tahun <small
+                                            class="text-danger">*</small></label>
+                                    <input type="number" placeholder="Tahun" min="1" max="100"
+                                        value="<?=$data_pegawai['tahun'];?>" class="form-control form-control-sm"
+                                        required name="tahun" id="tahun">
+                                </div>
                             </div>
                             <div class="card mt-n5 col-xxl-12">
                                 <div class="text-end p-5">

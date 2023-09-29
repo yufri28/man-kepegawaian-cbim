@@ -51,12 +51,13 @@ class Kepegawaian extends Connection
         $active_passive = $data['active_passive'];
         $sk_tetap = $data['sk_tetap'];
         $pkwt = $data['pkwt'];
+        $tahun = $data['tahun'];
         $query_insert = "INSERT INTO detail_pegawai
                         (id,retirement_date,jd,id_pegawai,
-                        status,active_passive,sk_tetap,pkwt)
+                        status,active_passive,sk_tetap,pkwt,tahun)
                         VALUES (0,'$retirement_date',
                         '$join_date','$nik','$status','$active_passive',
-                        '$sk_tetap','$pkwt')";
+                        '$sk_tetap','$pkwt','$tahun')";
         $insert = $this->db->query($query_insert);
         if($insert)
         {
@@ -79,11 +80,12 @@ class Kepegawaian extends Connection
         $active_passive = $data['active_passive'];
         $sk_tetap = $data['sk_tetap'];
         $pkwt = $data['pkwt'];
+        $tahun = $data['tahun'];
         $query_update = "UPDATE detail_pegawai
                         SET retirement_date='$retirement_date',
                         jd='$join_date',status='$status',
                         active_passive='$active_passive',
-                        sk_tetap='$sk_tetap',pkwt='$pkwt'
+                        sk_tetap='$sk_tetap',pkwt='$pkwt',tahun='$tahun'
                         WHERE id='$id'";
         $update = $this->db->query($query_update);
         if($update)
