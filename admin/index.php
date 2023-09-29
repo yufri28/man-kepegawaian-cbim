@@ -57,7 +57,6 @@ if (isset($_GET['page'])) {
             include "./404.php";
             break; 
         default:
-            // Tampilkan halaman 404
             include "./404.php";
             break;
     }

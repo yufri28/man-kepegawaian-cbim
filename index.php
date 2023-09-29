@@ -3,12 +3,12 @@ require_once 'config.php';
 
 $obj = new Connection();
 $koneksi = $obj->connectDatabase();
-$sql = "SELECT * FROM auth WHERE level=0";
-$res = $koneksi->query($sql);
-if($res->num_rows < 1){
+$cek_dafault_admin = "SELECT * FROM auth WHERE level=0";
+$result = $koneksi->query($cek_dafault_admin);
+if($result->num_rows < 1){
     $password_hash = password_hash("admin",PASSWORD_BCRYPT);
-    $sql2 = "INSERT INTO auth (id_auth,username,password,level) VALUES (null,'admin','$password_hash',0)";
-    $result2 = $koneksi->query($sql2);
+    $insert_default_admin = "INSERT INTO auth (id_auth,username,password,level) VALUES (null,'admin','$password_hash',0)";
+    $koneksi->query($insert_default_admin);
     
 }
 // Mengambil URL yang dikirimkan melalui aturan rewriting
@@ -18,8 +18,7 @@ $url = isset($_GET['url']) ? $_GET['url'] : '';
 $urlSegments = explode('/', rtrim($url, '/'));
 /// Menentukan halaman yang akan ditampilkan berdasarkan URL
 if (empty($urlSegments[0])) {
-    // Jika URL kosong, tampilkan halaman beranda
-    // require_once 'home.php';
+    // Jika URL kosong, tampilkan redirect ke login
     header("Location: ./auth/login.php");
     exit;
 } elseif ($urlSegments[0] === 'admin') {

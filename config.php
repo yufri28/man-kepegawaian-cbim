@@ -19,8 +19,8 @@ class Connection
     }
 }
 
-$conn = new Connection();
-$koneksi = $conn->connectDatabase();
+$obj_conn = new Connection();
+$koneksi = $obj_conn->connectDatabase();
 
 define('BASE_URL', 'http://localhost/kepegawaian/');
 
