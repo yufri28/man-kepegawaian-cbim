@@ -53,6 +53,18 @@ if (isset($_GET['page'])) {
         case 'kepegawaian-lihat':
             include "./lihat_pegawai.php";
             break; 
+        case 'kontrak-index':
+            include "./kontrak.php";
+            break; 
+        case 'kontrak-tambah':
+            include "./tambah_kontrak.php";
+            break; 
+        case 'kontrak-edit':
+            include "./edit_kontrak.php";
+            break; 
+        case 'kontrak-lihat':
+            include "./lihat_kontrak.php";
+            break; 
         case '404':
             include "./404.php";
             break; 

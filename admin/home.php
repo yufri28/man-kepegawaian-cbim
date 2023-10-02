@@ -131,14 +131,13 @@ $jumlah_pkwt_null = $Kepegawaian->count_pkwt_null();
                                 <span class="card-label fw-bolder fs-3 mb-1">Jumlah Pegawai</span>
                                 <span class="text-muted fw-bold fs-7">Berdasarkan SK</span>
                             </h3>
-
                         </div>
                         <!--end::Header-->
                         <!--begin::Body-->
                         <div class="card-body d-flex flex-column">
                             <div class="flex-grow-1">
-                                <div class="d-flex">
-                                    <div class="col-xl-6 me-3">
+                                <div class="d-flex justify-content-center">
+                                    <div class="col-xl-6 me-5">
                                         <!--begin::Statistics Widget 5-->
                                         <a href="#" class="card bg-primary hoverable card-xl-stretch mb-xl-8">
                                             <!--begin::Body-->
@@ -170,9 +169,9 @@ $jumlah_pkwt_null = $Kepegawaian->count_pkwt_null();
                                         </a>
                                         <!--end::Statistics Widget 5-->
                                     </div>
-                                </div>
-                                <div class="d-flex mt-n5">
-                                    <div class="col-xl-6 me-3">
+                                </div><br>
+                                <div class="d-flex justify-content-center mt-xl-n5">
+                                    <div class="col-xl-6 me-5">
                                         <!--begin::Statistics Widget 5-->
                                         <a href="#" class="card bg-primary hoverable card-xl-stretch mb-xl-8">
                                             <!--begin::Body-->
@@ -318,42 +317,42 @@ $jumlah_pkwt_null = $Kepegawaian->count_pkwt_null();
                         </div>
                         <!--end::Header-->
                         <!--begin::Body-->
-                        <div class="card-body d-flex flex-column">
+                        <div class="card-body d-flex justify-content-center flex-column">
                             <!--begin::Items-->
-                            <div class="">
-                                <div class="col-xl-12">
-                                    <!--begin::Statistics Widget 5-->
-                                    <a href="#" class="card bg-primary hoverable card-xl-stretch mb-xl-8">
-                                        <!--begin::Body-->
-                                        <div class="card-body text-center">
-                                            <div class="fw-bold text-white">
-                                                ACTIVE
-                                            </div>
-                                            <div class="text-white fw-bolder fs-2 mb-2 mt-5">
-                                                <?= $jumlah_active; ?>
-                                            </div>
+                            <!-- <div class=""> -->
+                            <div class="col-xl-12">
+                                <!--begin::Statistics Widget 5-->
+                                <a href="#" class="card bg-primary hoverable card-xl-stretch mb-xl-8">
+                                    <!--begin::Body-->
+                                    <div class="card-body text-center">
+                                        <div class="fw-bold text-white">
+                                            ACTIVE
                                         </div>
-                                        <!--end::Body-->
-                                    </a>
-                                    <!--end::Statistics Widget 5-->
-                                </div>
-                                <div class="col-xl-12">
-                                    <!--begin::Statistics Widget 5-->
-                                    <a href="#" class="card bg-danger hoverable card-xl-stretch mb-xl-8">
-                                        <!--begin::Body-->
-                                        <div class="card-body text-center">
-                                            <div class="fw-bold text-white">
-                                                PASSIVE
-                                            </div>
-                                            <div class="text-white fw-bolder fs-2 mb-2 mt-5">
-                                                <?= $jumlah_passive; ?>
-                                            </div>
+                                        <div class="text-white fw-bolder fs-2 mb-2 mt-5">
+                                            <?= $jumlah_active; ?>
                                         </div>
-                                        <!--end::Body-->
-                                    </a>
-                                    <!--end::Statistics Widget 5-->
-                                </div>
+                                    </div>
+                                    <!--end::Body-->
+                                </a>
+                                <!--end::Statistics Widget 5-->
+                            </div><br>
+                            <div class="col-xl-12 mt-xl-n5">
+                                <!--begin::Statistics Widget 5-->
+                                <a href="#" class="card bg-danger hoverable card-xl-stretch mb-xl-8">
+                                    <!--begin::Body-->
+                                    <div class="card-body text-center">
+                                        <div class="fw-bold text-white">
+                                            PASSIVE
+                                        </div>
+                                        <div class="text-white fw-bolder fs-2 mb-2 mt-5">
+                                            <?= $jumlah_passive; ?>
+                                        </div>
+                                    </div>
+                                    <!--end::Body-->
+                                </a>
+                                <!--end::Statistics Widget 5-->
                             </div>
+                            <!-- </div> -->
                             <!--end::Items-->
                         </div>
                         <!--end::Body-->

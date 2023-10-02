@@ -116,6 +116,19 @@
                             </a>
                         </div>
                     </div>
+                    <div class="menu menu-column menu-title-gray-700 menu-state-title-primary menu-state-icon-primary menu-state-bullet-primary menu-arrow-gray-500 fw-bold"
+                        id="#kt_aside_menu" data-kt-menu="true">
+                        <div class="menu-item py-2">
+                            <a class="menu-link <?= isset($_GET['page']) && explode("-",$_GET['page'])[0] == 'kontrak' ? 'active':''; ?> menu-center"
+                                href="./index.php?page=kontrak-index" data-bs-trigger="hover" data-bs-dismiss="click"
+                                data-bs-placement="right">
+                                <span class="menu-icon me-0">
+                                    <i class="bi bi-file-earmark-text"></i>
+                                </span>
+                                <span class="menu-title text-center">Kontrak</span>
+                            </a>
+                        </div>
+                    </div>
                     <!--end::Menu-->
                 </div>
                 <!--end::Aside Menu-->
