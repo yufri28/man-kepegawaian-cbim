@@ -1,9 +1,9 @@
 <?php 
-
-$Kepegawaian = new Kepegawaian();
 $id_auth = $_SESSION['id_auth'];
 $data_pegawai = $Kepegawaian->get_join_pegawai();
-$jumlah_pegawai = $Kepegawaian->count_pegawai();
+$jumlah_kontrak = $Kontrak->count_all_kontrak();
+$data_karyawan = $Kontrak->get_all_karyawan();
+$data_kontrak = $Kontrak->get_all_kontrak();
 ?>
 
 <!--begin::Root-->
@@ -21,7 +21,7 @@ $jumlah_pegawai = $Kepegawaian->count_pegawai();
                     <div class="card-header border-0 pt-5">
                         <h3 class="card-title align-items-start flex-column">
                             <span class="card-label fw-bolder fs-3 mb-1">Daftar Kontrak</span>
-                            <span class="text-muted mt-1 fw-bold fs-7"><?= $jumlah_pegawai;?>
+                            <span class="text-muted mt-1 fw-bold fs-7"><?= $jumlah_kontrak;?>
                                 Kontrak</span>
                         </h3>
                         <div class="card-toolbar">
@@ -57,12 +57,9 @@ $jumlah_pegawai = $Kepegawaian->count_pegawai();
                                         <th class="p-0 text-muted fw-bold text-center min-w-30px">No</th>
                                         <th class="p-0 text-muted fw-bold text-center min-w-200px">Nama Pegawai</th>
                                         <th class="p-0 text-muted fw-bold text-center min-w-200px">NIK</th>
-                                        <th class="p-0 text-muted fw-bold text-center min-w-150px">Join Date</th>
-                                        <!-- <th class="p-0 text-muted fw-bold text-center min-w-150px">Retirement Date</th> -->
-                                        <th class="p-0 text-muted fw-bold text-center min-w-30px">Status</th>
-                                        <th class="p-0 text-muted fw-bold text-center min-w-100px">Active/Passive</th>
-                                        <!-- <th class="p-0 text-muted fw-bold text-center min-w-100px">SK Tetap</th> -->
-                                        <!-- <th class="p-0 text-muted fw-bold text-center min-w-100px">PKWT</th> -->
+                                        <th class="p-0 text-muted fw-bold text-center min-w-100px">SK Tetap</th>
+                                        <th class="p-0 text-muted fw-bold text-center min-w-100px">PKWT</th>
+                                        <th class="p-0 text-muted fw-bold text-center min-w-100px">SK Mutasi</th>
                                         <th class="p-0 text-muted fw-bold text-center min-w-100px">Aksi</th>
                                     </tr>
                                 </thead>
@@ -72,37 +69,28 @@ $jumlah_pegawai = $Kepegawaian->count_pegawai();
                                     <?php 
                                      $i = 0;
                                     ?>
-                                    <?php foreach ($data_pegawai as $key => $pegawai):?>
+                                    <?php foreach ($data_kontrak as $key => $kontrak):?>
                                     <tr>
                                         <td class="text-dark ps-3 fw-bolder">
                                             <?= ++$i;?>
                                         </td>
                                         <td class="text-dark text-center fw-bolder">
-                                            <?= $pegawai['nama_karyawan'];?>
+                                            <?= $kontrak['nama_karyawan'];?>
                                         </td>
                                         <td class="text-dark text-center fw-bolder">
-                                            <?= $pegawai['nik'];?>
+                                            <?= $kontrak['nik'];?>
                                         </td>
                                         <td class="text-dark text-center fw-bolder">
-                                            <?= $pegawai['jd'];?>
-                                        </td>
-                                        <!-- <td class="text-dark text-center fw-bolder">
-                                            <?= $pegawai['retirement_date'];?>
-                                        </td> -->
-                                        <td class="text-dark text-center fw-bolder">
-                                            <?= $pegawai['status'];?>
+                                            <?= $kontrak['sk_tetap'] != NULL ? substr($kontrak['sk_tetap'],0,20).'...':'-';?>
                                         </td>
                                         <td class="text-dark text-center fw-bolder">
-                                            <?= $pegawai['active_passive'];?>
-                                        </td>
-                                        <!-- <td class="text-dark text-center fw-bolder">
-                                            <?= $pegawai['sk_tetap'] != NULL ? substr($pegawai['sk_tetap'],0,20).'...':'-';?>
+                                            <?= $kontrak['pkwt'] != NULL ? substr($kontrak['pkwt'],0,50).'...':'-';?>
                                         </td>
                                         <td class="text-dark text-center fw-bolder">
-                                            <?= $pegawai['pkwt'] != NULL ? substr($pegawai['pkwt'],0,50).'...':'-';?>
-                                        </td> -->
+                                            <?= $kontrak['sk_mutasi'] != NULL ? substr($kontrak['sk_mutasi'],0,20).'...':'-';?>
+                                        </td>
                                         <td class="text-center text-nowrap pe-3">
-                                            <a href="index.php?page=kontrak-lihat&idk=<?=base64_encode($pegawai['idd_karyawan']);?>"
+                                            <a href="index.php?page=kontrak-lihat&idkon=<?=base64_encode($kontrak['id']);?>"
                                                 class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1"
                                                 title="Lihat Detail">
                                                 <!--begin::Svg Icon | path: icons/duotune/art/art005.svg-->
@@ -117,7 +105,7 @@ $jumlah_pegawai = $Kepegawaian->count_pegawai();
                                                 </span>
                                                 <!--end::Svg Icon-->
                                             </a>
-                                            <a href="index.php?page=kontrak-edit&idk=<?=base64_encode($pegawai['idd_karyawan']);?>"
+                                            <a href="index.php?page=kontrak-edit&idkon=<?=base64_encode($kontrak['id']);?>"
                                                 class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1"
                                                 title="Edit">
                                                 <!--begin::Svg Icon | path: icons/duotune/art/art005.svg-->
@@ -135,7 +123,7 @@ $jumlah_pegawai = $Kepegawaian->count_pegawai();
                                                 <!--end::Svg Icon-->
                                             </a>
                                             <button type="button" data-bs-toggle="modal"
-                                                data-bs-target="#hapusPegawai<?=$pegawai['idd_karyawan'];?>"
+                                                data-bs-target="#hapusKontrak<?=$kontrak['id'];?>"
                                                 class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm"
                                                 title="Hapus">
                                                 <!--begin::Svg Icon | path: icons/duotune/general/gen027.svg-->
@@ -181,9 +169,9 @@ $jumlah_pegawai = $Kepegawaian->count_pegawai();
 <!--begin::Modal - Create App-->
 <?php require './templates/modals.php';?>
 <!-- begin::hapus modal aplikasi -->
-<?php foreach ($data_pegawai as $key => $pegawai):?>
-<div class="modal fade" id="hapusPegawai<?=$pegawai['idd_karyawan'];?>" tabindex="-1"
-    aria-labelledby="exampleModalLabel" aria-hidden="true">
+<?php foreach ($data_kontrak as $key => $kontrak):?>
+<div class="modal fade" id="hapusKontrak<?=$kontrak['id'];?>" tabindex="-1" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <form action="./proses.php" method="post">
@@ -193,15 +181,13 @@ $jumlah_pegawai = $Kepegawaian->count_pegawai();
                 </div>
                 <div class="modal-body">
                     <div class="mb-3">
-                        <input type="hidden" name="idd_karyawan" value="<?=$pegawai['idd_karyawan'];?>">
-                        <input type="hidden" name="id" value="<?=$pegawai['id'];?>">
-                        <input type="hidden" name="foto" value="<?=$pegawai['foto'];?>">
-                        <span>Anda yakin ingin hapus <strong><?=$pegawai['nama_karyawan'];?></strong> ?</span>
+                        <input type="hidden" name="id" value="<?=$kontrak['id'];?>">
+                        <span>Anda yakin ingin hapus <strong><?=$kontrak['nama_karyawan'];?></strong> ?</span>
                     </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-sm btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="submit" name="delete_pegawai" class="btn btn-sm btn-primary">Delete</button>
+                    <button type="submit" name="delete_kontrak" class="btn btn-sm btn-primary">Delete</button>
                 </div>
             </form>
         </div>

@@ -27,7 +27,7 @@ $data_karyawan = $Kepegawaian->get_karyawan();
                             <!--begin::Body-->
                             <div class="card-body py-3">
                                 <div class="mb-3">
-                                    <label for="nik" class="form-label">Karayawan <small
+                                    <label for="nik" class="form-label">Karyawan <small
                                             class="text-danger">*</small></label>
                                     <select class="form-control form-control-sm js-example-basic-single" name="nik"
                                         required>

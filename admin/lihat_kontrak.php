@@ -1,11 +1,8 @@
 <?php 
-$Kepegawaian = new Kepegawaian();
 $id_auth = $_SESSION['id_auth'];
-$id_data_karyawan = base64_decode($_GET['idk']);
-$data_pegawai = $Kepegawaian->join_pegawai_byId($id_data_karyawan);
-$data_karyawan = $Kepegawaian->get_all_karyawan();
-
-if(empty($data_pegawai)){
+$id_kontrak = base64_decode($_GET['idkon']);
+$data_kontrak = $Kontrak->join_kontrak_byId($id_kontrak);
+if(empty($data_kontrak)){
     echo "<script>window.location.href='index.php?page=404'</script>";
 }
 
@@ -22,115 +19,13 @@ if(empty($data_pegawai)){
                 <!--begin::Row-->
                 <div class="row gy-5 d-flex justify-content-center g-xl-8">
                     <!--begin::Col-->
-                    <div class="col-xxl-5">
+                    <div class="col-xxl-8">
                         <!--begin::Tables Widget 9-->
                         <div class="card card-xxl-stretch mb-5 mb-xl-8">
                             <!--begin::Header-->
                             <div class="card-header border-0 pt-5">
                                 <h3 class="card-title align-items-start flex-column">
-                                    <span class="card-label fw-bolder fs-3 mb-1">Data Diri</span>
-                                </h3>
-                            </div>
-                            <!--end::Header-->
-                            <!--begin::Body-->
-                            <div class="card-body py-3" style="overflow-y: auto;">
-                                <table class="table">
-                                    <tbody>
-                                        <tr>
-                                            <td class="text-muted fw-bold text-nowrap max-w-5px">Nama Karyawan
-                                            </td>
-                                            <td class="text-muted fw-bold text-start max-w-2px"> : </td>
-                                            <td class="text-dark fw-bolder fs-6 max-w-4px">
-                                                <?= $data_pegawai['nama_karyawan'] ?? "-" ;?>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="text-muted fw-bold text-nowrap max-w-5px">Jenis Kelamin
-                                            </td>
-                                            <td class="text-muted fw-bold text-start max-w-2px"> : </td>
-                                            <td class="text-dark fw-bolder fs-6 max-w-4px">
-                                                <?=$data_pegawai['sex'];?>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="text-muted fw-bold text-nowrap max-w-5px">Agama
-                                            </td>
-                                            <td class="text-muted fw-bold text-start max-w-2px"> : </td>
-                                            <td class="text-dark fw-bolder fs-6 max-w-4px"> <?=$data_pegawai['agama'];?>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="text-muted fw-bold text-nowrap max-w-5px">Tempat/Tanggal
-                                                Lahir
-                                            </td>
-                                            <td class="text-muted fw-bold text-start max-w-2px"> : </td>
-                                            <td class="text-dark fw-bolder fs-6 max-w-4px">
-                                                <?= $data_pegawai['tempat_lahir'].', '.date('d F Y',strtotime($data_pegawai['tgl_lahir']))== null?"-":$data_pegawai['tempat_lahir'].', '.date('d F Y', strtotime($data_pegawai['tgl_lahir']));?>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="text-muted fw-bold text-nowrap max-w-5px">NIK KTP
-                                            </td>
-                                            <td class="text-muted fw-bold text-start max-w-2px"> : </td>
-                                            <td class="text-dark fw-bolder fs-6 max-w-4px">
-                                                <?=$data_pegawai['nik_ktp'];?>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="text-muted fw-bold text-nowrap max-w-5px">Status Nikah
-                                            </td>
-                                            <td class="text-muted fw-bold text-start max-w-2px"> : </td>
-                                            <td class="text-dark fw-bolder fs-6 max-w-4px">
-                                                <?=$data_pegawai['status_hubungan'];?>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="text-muted fw-bold text-nowrap max-w-5px">No Telp
-                                            </td>
-                                            <td class="text-muted fw-bold text-start max-w-2px"> : </td>
-                                            <td class="text-dark fw-bolder fs-6 max-w-4px">
-                                                <?= $data_pegawai['no_telp'] == null ? "-":$data_pegawai['no_telp'];?>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="text-muted fw-bold text-nowrap max-w-5px">Email
-                                            </td>
-                                            <td class="text-muted fw-bold text-start max-w-2px"> : </td>
-                                            <td class="text-dark fw-bolder fs-6 max-w-4px">
-                                                <?=$data_pegawai['email'] == null ? "-":$data_pegawai['email'];?>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="text-muted fw-bold text-nowrap max-w-5px">Alamat KTP
-                                            </td>
-                                            <td class="text-muted fw-bold text-start max-w-2px"> : </td>
-                                            <td class="text-dark fw-bolder fs-6 max-w-4px">
-                                                <?= $data_pegawai['alamat_ktp'] == null ? "-":  $data_pegawai['alamat_ktp'];?>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="text-muted fw-bold text-nowrap max-w-5px">Alamat Sekarang
-                                            </td>
-                                            <td class="text-muted fw-bold text-start max-w-2px"> : </td>
-                                            <td class="text-dark fw-bolder fs-6 max-w-4px">
-                                                <?= $data_pegawai['alamat_sekarang'] == null ? "-":$data_pegawai['alamat_sekarang'];?>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                        <!--end::Tables Widget 9-->
-                    </div>
-                    <!--end::Col-->
-                    <!--begin::Col-->
-                    <div class="col-xxl-7">
-                        <!--begin::Tables Widget 9-->
-                        <div class="card card-xxl-stretch mb-5 mb-xl-8">
-                            <!--begin::Header-->
-                            <div class="card-header border-0 pt-5">
-                                <h3 class="card-title align-items-start flex-column">
-                                    <span class="card-label fw-bolder fs-3 mb-1">Informasi Pekerjaan</span>
+                                    <span class="card-label fw-bolder fs-3 mb-1">Informasi Kontrak</span>
                                 </h3>
                             </div>
                             <!--end::Header-->
@@ -143,46 +38,15 @@ if(empty($data_pegawai)){
                                             </td>
                                             <td class="text-muted fw-bold text-start max-w-10px"> : </td>
                                             <td class="text-dark fw-bolder fs-6 max-w-4px">
-                                                <?= $data_pegawai['id_pegawai'] == null ? "-":$data_pegawai['id_pegawai'];?>
+                                                <?= $data_kontrak['id_pegawai'] == null ? "-":$data_kontrak['id_pegawai'];?>
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td class="text-muted fw-bold text-nowrap min-w-10px">Jenis Karyawan
+                                            <td class="text-muted fw-bold text-nowrap min-w-10px">Nama Karyawan
                                             </td>
                                             <td class="text-muted fw-bold text-start max-w-10px"> : </td>
                                             <td class="text-dark fw-bolder fs-6 max-w-4px">
-                                                <?=$data_pegawai['jenis_karyawan'] == null ? "-":$data_pegawai['jenis_karyawan'];?>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="text-muted fw-bold text-nowrap min-w-10px">Join Date
-                                            </td>
-                                            <td class="text-muted fw-bold text-start max-w-10px"> : </td>
-                                            <td class="text-dark fw-bolder fs-6 max-w-4px">
-                                                <?=$data_pegawai['jd'] == null ? "-":date('d F Y', strtotime($data_pegawai['jd']));?>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="text-muted fw-bold text-nowrap min-w-10px">Retirement Date
-                                            </td>
-                                            <td class="text-muted fw-bold text-start max-w-10px"> : </td>
-                                            <td class="text-dark fw-bolder fs-6 max-w-4px">
-                                                <?=$data_pegawai['retirement_date'] == null ? "-":date('d F Y', strtotime($data_pegawai['retirement_date']));?>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="text-muted fw-bold text-nowrap min-w-10px">Status
-                                            </td>
-                                            <td class="text-muted fw-bold text-start max-w-10px"> : </td>
-                                            <td class="text-dark fw-bolder fs-6 max-w-4px">
-                                                <?=$data_pegawai['status'] == null ? "-":$data_pegawai['status'];?></td>
-                                        </tr>
-                                        <tr>
-                                            <td class="text-muted fw-bold text-nowrap min-w-10px">Active/Passive
-                                            </td>
-                                            <td class="text-muted fw-bold text-start max-w-10px"> : </td>
-                                            <td class="text-dark fw-bolder fs-6 max-w-4px">
-                                                <?=$data_pegawai['active_passive'] == null ? "-":$data_pegawai['active_passive'];?>
+                                                <?= $data_kontrak['nama_karyawan'] == null ? "-":$data_kontrak['nama_karyawan'];?>
                                             </td>
                                         </tr>
                                         <tr>
@@ -190,7 +54,7 @@ if(empty($data_pegawai)){
                                             </td>
                                             <td class="text-muted fw-bold text-start max-w-10px"> : </td>
                                             <td class="text-dark fw-bolder fs-6 max-w-4px">
-                                                <?=$data_pegawai['sk_tetap'] == null ? "-":$data_pegawai['sk_tetap'];?>
+                                                <?=$data_kontrak['sk_tetap'] == null ? "-":$data_kontrak['sk_tetap'];?>
                                             </td>
                                         </tr>
                                         <tr>
@@ -198,15 +62,15 @@ if(empty($data_pegawai)){
                                             </td>
                                             <td class="text-muted fw-bold text-start max-w-10px"> : </td>
                                             <td class="text-dark fw-bolder fs-6 max-w-4px">
-                                                <?=$data_pegawai['pkwt'] == null ? "-":$data_pegawai['pkwt'];?>
+                                                <?=$data_kontrak['pkwt'] == null ? "-":$data_kontrak['pkwt'];?>
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td class="text-muted fw-bold text-nowrap min-w-10px">Tahun
+                                            <td class="text-muted fw-bold text-nowrap min-w-10px">SK Mutasi
                                             </td>
                                             <td class="text-muted fw-bold text-start max-w-10px"> : </td>
                                             <td class="text-dark fw-bolder fs-6 max-w-4px">
-                                                <?=$data_pegawai['tahun'] == null ? "-":$data_pegawai['tahun'];?>
+                                                <?=$data_kontrak['sk_mutasi'] == null ? "-":$data_kontrak['sk_mutasi'];?>
                                             </td>
                                         </tr>
                                     </tbody>
@@ -217,9 +81,13 @@ if(empty($data_pegawai)){
                     </div>
                     <!--end::Col-->
                 </div>
-                <div class="card mt-n5 col-xxl-12">
-                    <div class="text-end p-5">
-                        <a href="./index.php?page=kontrak-index" class="btn btn-sm btn-danger">Kembali</a>
+                <div class="row d-flex justify-content-center mt-n5">
+                    <div class="col-xxl-8">
+                        <div class="card card-xxl-stretch mb-5 mb-xl-8">
+                            <div class="text-end p-5">
+                                <a href="./index.php?page=kontrak-index" class="btn btn-sm btn-danger">Kembali</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </form>

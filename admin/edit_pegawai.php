@@ -34,7 +34,7 @@ if(empty($data_pegawai)){
                             <div class="card-body py-3">
                                 <div class="mb-3">
                                     <input type="hidden" name="id" value="<?=$data_pegawai['id'];?>">
-                                    <label for="nik" class="form-label">Karayawan <small
+                                    <label for="nik" class="form-label">Karyawan <small
                                             class="text-danger">*</small></label>
                                     <select disabled class="form-control form-control-sm" required>
                                         <option value="">-- Pilih --</option>

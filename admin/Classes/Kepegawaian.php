@@ -177,33 +177,33 @@ class Kepegawaian extends Connection
     public function count_sk_tetap()
     {
         $data = $this->db->query("SELECT COUNT(*) AS jumlah_sk_tetap 
-                                FROM karyawan k JOIN detail_pegawai dp ON 
-                                k.nik = dp.id_pegawai
-                                WHERE dp.sk_tetap IS NOT NULL AND dp.sk_tetap !=''")->fetch_assoc();
+                                FROM karyawan k JOIN kontrak ko ON 
+                                k.nik = ko.id_pegawai
+                                WHERE ko.sk_tetap IS NOT NULL AND ko.sk_tetap !=''")->fetch_assoc();
         return $data['jumlah_sk_tetap'];
     }
     public function count_sk_null()
     {
         $data = $this->db->query("SELECT COUNT(*) AS jumlah_sk_null
-                                FROM karyawan k JOIN detail_pegawai dp ON 
-                                k.nik = dp.id_pegawai
-                                WHERE dp.sk_tetap IS NULL AND dp.sk_tetap=''")->fetch_assoc();
+                                FROM karyawan k JOIN kontrak ko ON 
+                                k.nik = ko.id_pegawai
+                                WHERE ko.sk_tetap IS NULL AND ko.sk_tetap=''")->fetch_assoc();
         return $data['jumlah_sk_null'];
     }
     public function count_pkwt()
     {
         $data = $this->db->query("SELECT COUNT(*) AS jumlah_pkwt 
-                                FROM karyawan k JOIN detail_pegawai dp ON 
-                                k.nik = dp.id_pegawai
-                                WHERE dp.pkwt != '' AND dp.pkwt IS NOT NULL")->fetch_assoc();
+                                FROM karyawan k JOIN kontrak ko ON 
+                                k.nik = ko.id_pegawai
+                                WHERE ko.pkwt != '' AND ko.pkwt IS NOT NULL")->fetch_assoc();
         return $data['jumlah_pkwt'];
     }
     public function count_pkwt_null()
     {
         $data = $this->db->query("SELECT COUNT(*) AS jumlah_pkwt_null
-                                FROM karyawan k JOIN detail_pegawai dp ON 
-                                k.nik = dp.id_pegawai
-                                WHERE dp.pkwt IS NULL AND dp.pkwt = ''")->fetch_assoc();
+                                FROM karyawan k JOIN kontrak ko ON 
+                                k.nik = ko.id_pegawai
+                                WHERE ko.pkwt IS NULL AND ko.pkwt = ''")->fetch_assoc();
         return $data['jumlah_pkwt_null'];
     }
 

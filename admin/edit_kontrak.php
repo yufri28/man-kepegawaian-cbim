@@ -1,10 +1,9 @@
 <?php 
-$Kepegawaian = new Kepegawaian();
 $id_auth = $_SESSION['id_auth'];
-$id_data_karyawan = base64_decode($_GET['idk']);
-$data_pegawai = $Kepegawaian->join_pegawai_byId($id_data_karyawan);
-$data_karyawan = $Kepegawaian->get_all_karyawan();
-if(empty($data_pegawai)){
+$id_kontrak = base64_decode($_GET['idkon']);
+$data_kontrak = $Kontrak->join_kontrak_byId($id_kontrak);
+$data_karyawan = $Kontrak->get_all_karyawan();
+if(empty($data_kontrak)){
     echo "<script>window.location.href='index.php?page=404'</script>";
 }
 ?>
@@ -26,20 +25,20 @@ if(empty($data_pegawai)){
                             <!--begin::Header-->
                             <div class="card-header border-0 pt-5">
                                 <h3 class="card-title align-items-start flex-column">
-                                    <span class="card-label fw-bolder fs-3 mb-1">Informasi Pekerjaan:</span>
+                                    <span class="card-label fw-bolder fs-3 mb-1">Informasi Kontrak:</span>
                                 </h3>
                             </div>
                             <!--end::Header-->
                             <!--begin::Body-->
                             <div class="card-body py-3">
                                 <div class="mb-3">
-                                    <input type="hidden" name="id" value="<?=$data_pegawai['id'];?>">
-                                    <label for="nik" class="form-label">Karayawan <small
+                                    <input type="hidden" name="id" value="<?=$data_kontrak['id'];?>">
+                                    <label for="nik" class="form-label">Karyawan <small
                                             class="text-danger">*</small></label>
                                     <select disabled class="form-control form-control-sm" required>
                                         <option value="">-- Pilih --</option>
                                         <?php foreach ($data_karyawan as $key => $karyawan):?>
-                                        <option <?= $data_pegawai['id_pegawai'] == $karyawan['nik'] ? 'selected':'';?>
+                                        <option <?= $data_kontrak['id_pegawai'] == $karyawan['nik'] ? 'selected':'';?>
                                             value="<?=$karyawan['nik'];?>">
                                             <?=$karyawan['nik'];?> - <?=$karyawan['nama_karyawan'];?></option>
                                         <?php endforeach;?>
@@ -47,71 +46,26 @@ if(empty($data_pegawai)){
                                 </div>
                                 <div class="row d-flex">
                                     <div class="mb-3 col-lg-6">
-                                        <label for="join_date" class="form-label">Join Date <small
-                                                class="text-danger">*</small></label>
-                                        <input type="date" value="<?=$data_pegawai['jd'];?>"
-                                            class="form-control form-control-sm" name="join_date" id="join_date">
-                                    </div>
-                                    <div class="mb-3 col-lg-6">
-                                        <label for="retirement_date" class="form-label">Retirement Date <small
-                                                class="text-danger">*</small></label>
-                                        <input type="date" value="<?=$data_pegawai['retirement_date'];?>"
-                                            class="form-control form-control-sm" required name="retirement_date"
-                                            id="retirement_date">
-                                    </div>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="status" class="form-label">Status <small
-                                            class="text-danger">*</small></label>
-                                    <select class="form-control form-control-sm" name="status" required
-                                        aria-label="Default select example">
-                                        <option value="">-- Pilih --</option>
-                                        <option <?= $data_pegawai['status'] == 'PERMANENT' ?'selected':'';?>
-                                            value="PERMANENT">PERMANENT</option>
-                                        <option <?= $data_pegawai['status'] == 'CONTRACT' ?'selected':'';?>
-                                            value="CONTRACT">CONTRACT</option>
-                                        <option <?= $data_pegawai['status'] == 'PKH' ?'selected':'';?> value="PKH">PKH
-                                        </option>
-                                        <option <?= $data_pegawai['status'] == 'KONSULTAN' ?'selected':'';?>
-                                            value="KONSULTAN">KONSULTAN</option>
-                                    </select>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="active_passive" class="form-label">Aktive/Passive <small
-                                            class="text-danger">*</small></label>
-                                    <select class="form-control form-control-sm" required name="active_passive"
-                                        aria-label="Default select example">
-                                        <option value="">-- Pilih --</option>
-                                        <option <?= $data_pegawai['active_passive'] == 'ACTIVE' ?'selected':'';?>
-                                            value="ACTIVE">ACTIVE</option>
-                                        <option <?= $data_pegawai['active_passive'] == 'PASSIVE' ?'selected':'';?>
-                                            value="PASSIVE">PASSIVE</option>
-                                    </select>
-                                </div>
-                                <div class="row d-flex">
-                                    <div class="mb-3 col-lg-6">
                                         <label for="sk_tetap" class="form-label">SK Tetap</label>
                                         <textarea class="form-control form-control-sm" name="sk_tetap"
-                                            rows="10"><?=$data_pegawai['sk_tetap'];?></textarea>
+                                            rows="10"><?=$data_kontrak['sk_tetap'];?></textarea>
                                     </div>
                                     <div class="mb-3 col-lg-6">
                                         <label for="pkwt" class="form-label">PKWT</label>
                                         <textarea class="form-control form-control-sm" name="pkwt"
-                                            rows="10"><?=$data_pegawai['pkwt'];?></textarea>
+                                            rows="10"><?=$data_kontrak['pkwt'];?></textarea>
                                     </div>
                                 </div>
-                                <div class="mb-3">
-                                    <label for="tahun" class="form-label">Tahun <small
-                                            class="text-danger">*</small></label>
-                                    <input type="number" placeholder="Tahun" min="1" max="100"
-                                        value="<?=$data_pegawai['tahun'];?>" class="form-control form-control-sm"
-                                        required name="tahun" id="tahun">
+                                <div class="mb-3 col-lg-12">
+                                    <label for="sk_mutasi" class="form-label">SK Mutasi</label>
+                                    <textarea class="form-control form-control-sm" name="sk_mutasi"
+                                        rows="10"><?=$data_kontrak['sk_mutasi'];?></textarea>
                                 </div>
                             </div>
                             <div class="card mt-n5 col-xxl-12">
                                 <div class="text-end p-5">
                                     <a href="./index.php?page=kontrak-index" class="btn btn-sm btn-danger">Kembali</a>
-                                    <button type="submit" name="update_pegawai"
+                                    <button type="submit" name="update_kontrak"
                                         class="btn btn-sm btn-primary">Simpan</button>
                                 </div>
                             </div>

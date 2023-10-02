@@ -1,6 +1,6 @@
 <?php 
 
-$Kepegawaian = new Kepegawaian();
+// $Kepegawaian = new Kepegawaian();
 
 $jumlah_permanent = $Kepegawaian->count_permanent();
 $jumlah_contract = $Kepegawaian->count_contract();

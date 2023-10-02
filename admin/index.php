@@ -1,5 +1,6 @@
 <?php require_once '../config.php';?>
 <?php include_once './Classes/Kepegawaian.php';?>
+<?php include_once './Classes/Kontrak.php';?>
 <?php include './templates/header.php';?>
 
 <!-- begin::Notification -->
