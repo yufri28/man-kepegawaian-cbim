@@ -1053,7 +1053,19 @@
                             class="page-title d-flex align-items-center flex-wrap me-3 mb-5 mb-lg-0">
                             <!--begin::Title-->
                             <h1 class="d-flex align-items-center text-dark fw-bolder my-1 fs-3">
-                                <?= isset($_GET['page']) && str_contains($_GET['page'],'kepegawaian') == 'kepegawaian' ? 'Kepegawaian':'Dashboard';?>
+                                <?php 
+
+                                    if(!isset($_GET['page']))
+                                    {
+                                        echo "Dashboard";
+                                    }elseif(($_GET['page']) && str_contains($_GET['page'],'kepegawaian') == 'kepegawaian')
+                                    {
+                                        echo "Kepegawaian";
+                                    }elseif(($_GET['page']) && str_contains($_GET['page'],'kontrak') == 'kontrak')
+                                    {
+                                        echo "Kontrak";
+                                    }
+                                ?>
                                 <!--begin::Separator-->
                                 <span class="h-20px border-gray-200 border-start ms-3 mx-2"></span>
                                 <!--end::Separator-->
