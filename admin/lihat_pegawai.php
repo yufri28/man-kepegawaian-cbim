@@ -22,7 +22,7 @@ if(empty($data_pegawai)){
                 <!--begin::Row-->
                 <div class="row gy-5 d-flex justify-content-center g-xl-8">
                     <!--begin::Col-->
-                    <div class="col-xxl-5">
+                    <div class="col-xxl-7">
                         <!--begin::Tables Widget 9-->
                         <div class="card card-xxl-stretch mb-5 mb-xl-8">
                             <!--begin::Header-->
@@ -124,7 +124,7 @@ if(empty($data_pegawai)){
                     </div>
                     <!--end::Col-->
                     <!--begin::Col-->
-                    <div class="col-xxl-7">
+                    <div class="col-xxl-5">
                         <!--begin::Tables Widget 9-->
                         <div class="card card-xxl-stretch mb-5 mb-xl-8">
                             <!--begin::Header-->
@@ -185,7 +185,7 @@ if(empty($data_pegawai)){
                                                 <?=$data_pegawai['active_passive'] == null ? "-":$data_pegawai['active_passive'];?>
                                             </td>
                                         </tr>
-                                        <tr>
+                                        <!-- <tr>
                                             <td class="text-muted fw-bold text-nowrap min-w-10px">SK Tetap
                                             </td>
                                             <td class="text-muted fw-bold text-start max-w-10px"> : </td>
@@ -200,7 +200,7 @@ if(empty($data_pegawai)){
                                             <td class="text-dark fw-bolder fs-6 max-w-4px">
                                                 <?=$data_pegawai['pkwt'] == null ? "-":$data_pegawai['pkwt'];?>
                                             </td>
-                                        </tr>
+                                        </tr> -->
                                         <tr>
                                             <td class="text-muted fw-bold text-nowrap min-w-10px">Tahun
                                             </td>
