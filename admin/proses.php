@@ -14,8 +14,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
         $join_date = htmlspecialchars($_POST['join_date']);
         $status = htmlspecialchars($_POST['status']);
         $active_passive = htmlspecialchars($_POST['active_passive']);
-        $sk_tetap = htmlspecialchars($_POST['sk_tetap']);
-        $pkwt = htmlspecialchars($_POST['pkwt']);
+        // $sk_tetap = htmlspecialchars($_POST['sk_tetap']);
+        // $pkwt = htmlspecialchars($_POST['pkwt']);
         $tahun = htmlspecialchars($_POST['tahun']);
         $dataPegawai = [
             'nik' => $nik,
@@ -23,8 +23,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
             'join_date' => $join_date,
             'status' => $status,
             'active_passive' => $active_passive,
-            'sk_tetap' => $sk_tetap,
-            'pkwt' => $pkwt,
+            // 'sk_tetap' => $sk_tetap,
+            // 'pkwt' => $pkwt,
             'tahun' => $tahun
         ];
         $Kepegawaian->add($dataPegawai);
@@ -39,8 +39,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
         $join_date = htmlspecialchars($_POST['join_date']);
         $status = htmlspecialchars($_POST['status']);
         $active_passive = htmlspecialchars($_POST['active_passive']);
-        $sk_tetap = htmlspecialchars($_POST['sk_tetap']);
-        $pkwt = htmlspecialchars($_POST['pkwt']);
+        // $sk_tetap = htmlspecialchars($_POST['sk_tetap']);
+        // $pkwt = htmlspecialchars($_POST['pkwt']);
         $tahun = htmlspecialchars($_POST['tahun']);
        
         $dataPegawai = [
@@ -49,8 +49,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
             'join_date' => $join_date,
             'status' => $status,
             'active_passive' => $active_passive,
-            'sk_tetap' => $sk_tetap,
-            'pkwt' => $pkwt,
+            // 'sk_tetap' => $sk_tetap,
+            // 'pkwt' => $pkwt,
             'tahun' => $tahun
         ];
         $Kepegawaian->update($dataPegawai);

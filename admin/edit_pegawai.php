@@ -88,7 +88,7 @@ if(empty($data_pegawai)){
                                             value="PASSIVE">PASSIVE</option>
                                     </select>
                                 </div>
-                                <div class="row d-flex">
+                                <!-- <div class="row d-flex">
                                     <div class="mb-3 col-lg-6">
                                         <label for="sk_tetap" class="form-label">SK Tetap</label>
                                         <textarea class="form-control form-control-sm" name="sk_tetap"
@@ -99,13 +99,12 @@ if(empty($data_pegawai)){
                                         <textarea class="form-control form-control-sm" name="pkwt"
                                             rows="10"><?=$data_pegawai['pkwt'];?></textarea>
                                     </div>
-                                </div>
+                                </div> -->
                                 <div class="mb-3">
-                                    <label for="tahun" class="form-label">Tahun <small
-                                            class="text-danger">*</small></label>
+                                    <label for="tahun" class="form-label">Tahun </label>
                                     <input type="number" placeholder="Tahun" min="1" max="100"
                                         value="<?=$data_pegawai['tahun'];?>" class="form-control form-control-sm"
-                                        required name="tahun" id="tahun">
+                                        name="tahun" id="tahun">
                                 </div>
                             </div>
                             <div class="card mt-n5 col-xxl-12">
